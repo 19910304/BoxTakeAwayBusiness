@@ -543,8 +543,10 @@ public class StoreSettingNew extends BaseActivity {
                                 }
                                 if (shop_status == 0) {
                                     tv_shop_status.setText("未营业");
+                                    setOperatingState("未营业");
                                 } else {
                                     tv_shop_status.setText("营业中");
+                                    setOperatingState("营业中");
                                 }
                                 et_send_price.setText(send_price + "");
                                 tv_shop_phone.setText(shop_phone);

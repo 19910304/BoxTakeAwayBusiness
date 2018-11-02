@@ -185,6 +185,7 @@ public class PassWordLogin extends BaseActivity {
             case R.id.bt_login_sure://登录
 //                netService.updPwd(getuserinfoId(), "0", "123456", login_handler);
                 if (Valid.isPhone(accountNumber) && Valid.isNotNullOrEmpty(password)) {
+                    bt_login_sure.setClickable(false);
                     netService.Login(accountNumber, password, moble(), appUtil.getUniqueID(), loginHandler);
                 } else {
                     Toast.makeText(this, "请正确输入账户和密码", Toast.LENGTH_SHORT).show();
@@ -364,9 +365,11 @@ public class PassWordLogin extends BaseActivity {
 
                         break;
                     case 2001:
+                        activity.bt_login_sure.setClickable(true);
                         activity.showTip(msg.toString(), Toast.LENGTH_SHORT);
                         break;
                     case 1001:
+                        activity.bt_login_sure.setClickable(true);
                         activity.showTip(activity.getString(R.string.network_error), Toast.LENGTH_SHORT);
                         break;
                     default:
