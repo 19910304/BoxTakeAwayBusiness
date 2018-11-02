@@ -295,7 +295,7 @@ public class PassWordLogin extends BaseActivity {
         public LoginHandler(PassWordLogin activity) {
             mActivity = new WeakReference<PassWordLogin>(activity);
         }
-
+//111
         @Override
         public void handleMessage(Message msg) {
             final PassWordLogin activity = mActivity.get();
