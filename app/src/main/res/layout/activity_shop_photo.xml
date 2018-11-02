@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/action_header_save"></include>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <com.xinzuokeji.boxtakeawaybusiness.util.MyGridView
+                android:id="@+id/gv_shop_photo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:numColumns="2"
+                android:visibility="visible">
+
+            </com.xinzuokeji.boxtakeawaybusiness.util.MyGridView>
+
+            <Button
+                android:id="@+id/bt_delete_photo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dimen_16dp"
+                android:layout_marginLeft="@dimen/dimen_12dp"
+                android:layout_marginRight="@dimen/dimen_12dp"
+                android:layout_marginTop="@dimen/dimen_24dp"
+                android:background="@drawable/bt_selector"
+                android:text="删除"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_size_14sp"
+                android:visibility="gone" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

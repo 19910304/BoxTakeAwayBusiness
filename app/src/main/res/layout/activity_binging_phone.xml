@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_new"
+    android:orientation="vertical">
+
+    <include layout="@layout/action_header"></include>
+
+    <LinearLayout
+        android:id="@+id/ll_reset_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <EditText
+            android:id="@+id/et_phone_number"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="@dimen/dimen_20dp"
+            android:background="@drawable/login_et_selector"
+            android:hint="请输入原手机号码"
+            android:inputType="phone"
+            android:paddingLeft="8dp"
+            android:textColor="@color/gray_light"
+            android:textColorHint="#999999"
+            android:textSize="16sp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/et_code"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="@dimen/dimen_14dp"
+                android:layout_weight="1"
+                android:background="@drawable/login_et_selector"
+                android:hint="请输入验证码"
+                android:paddingLeft="8dp"
+                android:textColor="@color/gray_light"
+                android:textColorHint="#999999"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/bt_code"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dimen_48dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="@dimen/dimen_16dp"
+                android:layout_marginTop="@dimen/dimen_16dp"
+                android:clickable="true"
+                android:gravity="center"
+                android:paddingLeft="@dimen/dimen_8dp"
+                android:paddingRight="@dimen/dimen_8dp"
+                android:text="发送验证码"
+                android:textColor="#FA6161"
+                android:textSize="@dimen/font_size_15sp" />
+        </RelativeLayout>
+
+
+        <Button
+            android:id="@+id/btn_reset_confirm"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="@dimen/dimen_48dp"
+            android:background="@drawable/bt_selector"
+            android:text="下一步"
+            android:textColor="#F5F5F5"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_tip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_16dp"
+            android:text="注：若原手机号码不可用，请拨打客服热线进行修改"
+            android:textColor="#666666"
+            android:textSize="@dimen/font_size_14sp" />
+    </LinearLayout>
+
+</LinearLayout>

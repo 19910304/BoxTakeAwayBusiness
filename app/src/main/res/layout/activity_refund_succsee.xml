@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/action_header_new"></include>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="70dp"
+            android:background="@mipmap/refund_success"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_18dp"
+            android:text="退款申请提交成功"
+            android:textColor="#fc656f"
+            android:textSize="@dimen/font_size_16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9dp"
+            android:text="退款将在2小时退给用户"
+            android:textColor="#666666"
+            android:textSize="@dimen/font_size_14sp" />
+
+        <Button
+            android:id="@+id/bt_refund_success"
+            android:layout_width="150dp"
+            android:layout_height="39dp"
+            android:layout_marginTop="38dp"
+            android:background="@drawable/set_up_shop_selector"
+            android:text="确定"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/font_size_15sp" />
+    </LinearLayout>
+</LinearLayout>

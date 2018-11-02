@@ -1,0 +1,598 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_new"
+    android:orientation="vertical">
+
+    <include layout="@layout/action_header"></include>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:id="@+id/ll_good_img"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_15dp"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginBottom="18dp"
+                    android:layout_marginLeft="11dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_weight="1"
+                    android:text="商品头图"
+                    android:textColor="#333333"
+                    android:textSize="@dimen/font_size_15sp" />
+
+                <ImageView
+                    android:id="@+id/img_good_icon"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginRight="11dp"
+                    android:layout_marginTop="15dp"
+                    android:clickable="false"
+                    android:scaleType="fitXY" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginRight="11dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@mipmap/qqwww" />
+            </LinearLayout>
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_15dp"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginLeft="11dp"
+                    android:layout_marginTop="15dp"
+                    android:text="商品名称"
+                    android:textColor="#333333"
+                    android:textSize="@dimen/font_size_15sp" />
+
+                <EditText
+                    android:id="@+id/et_good_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginLeft="@dimen/dimen_6dp"
+                    android:layout_marginRight="11dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/white_et_selector"
+                    android:gravity="end"
+                    android:hint=""
+
+                    android:textColor="#999999"
+                    android:textSize="@dimen/font_size_14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_0.5dp"
+                    android:layout_marginLeft="10dp"
+
+                    android:background="#EBEBEB" />
+            </LinearLayout>
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginLeft="11dp"
+                    android:layout_marginTop="15dp"
+                    android:text="商品价格"
+                    android:textColor="#333333"
+                    android:textSize="@dimen/font_size_15sp" />
+
+                <EditText
+                    android:id="@+id/et_good_price"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginLeft="@dimen/dimen_6dp"
+                    android:layout_marginRight="11dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/white_et_selector"
+                    android:gravity="end"
+                    android:hint=""
+                    android:inputType="numberDecimal"
+                    android:textColor="#999999"
+                    android:textSize="@dimen/font_size_14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_0.5dp"
+                    android:layout_marginLeft="10dp"
+
+                    android:background="#EBEBEB" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="18dp"
+                    android:layout_marginLeft="11dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_weight="1"
+                    android:text="出售时间"
+                    android:textColor="#333333"
+                    android:textSize="@dimen/font_size_15sp" />
+
+                <TextView
+                    android:id="@+id/tv_star_time"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:text="开始"
+                    android:textColor="#999999"
+                    android:textSize="@dimen/font_size_14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginTop="15dp"
+                    android:gravity="center"
+                    android:text="～" />
+
+                <TextView
+                    android:id="@+id/tv_end_time"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:text="结束"
+                    android:textColor="#999999"
+                    android:textSize="@dimen/font_size_14sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginRight="11dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@mipmap/qqwww" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_xuanze_caidan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_15dp"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="18dp"
+                    android:layout_marginLeft="11dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_weight="1"
+                    android:text="选择菜单"
+                    android:textColor="#333333"
+                    android:textSize="@dimen/font_size_15sp" />
+
+                <TextView
+                    android:id="@+id/tv_caidan_menus"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="18dp"
+                    android:layout_marginLeft="11dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:paddingRight="@dimen/dimen_16dp"
+                    android:text=""
+                    android:textColor="#333333"
+                    android:textSize="@dimen/font_size_15sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginRight="11dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@mipmap/qqwww" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_change_guige"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginLeft="11dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_weight="1"
+                    android:text="选择/修改规格"
+                    android:textColor="#333333"
+                    android:textSize="@dimen/font_size_15sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginRight="11dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@mipmap/qqwww" />
+            </LinearLayout>
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_15dp"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginLeft="11dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_weight="1"
+                    android:text=" 输入标签1"
+                    android:textColor="#333333"
+                    android:textSize="@dimen/font_size_15sp" />
+
+                <EditText
+                    android:id="@+id/et_biaoqian1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginLeft="@dimen/dimen_6dp"
+                    android:layout_marginRight="11dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/white_et_selector"
+                    android:gravity="end"
+                    android:hint="如:招牌,最多可输入2字,可不填"
+                    android:textColor="#999999"
+                    android:textSize="@dimen/font_size_14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_0.5dp"
+                    android:layout_marginLeft="10dp"
+
+                    android:background="#EBEBEB" />
+            </LinearLayout>
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="18dp"
+                    android:layout_marginLeft="11dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_weight="1"
+                    android:text=" 输入标签2"
+                    android:textColor="#333333"
+                    android:textSize="@dimen/font_size_15sp" />
+
+                <EditText
+                    android:id="@+id/et_biaoqian2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginLeft="@dimen/dimen_6dp"
+                    android:layout_marginRight="11dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/white_et_selector"
+                    android:gravity="end"
+                    android:hint="如:招牌,最多可输入2字,可不填"
+                    android:textColor="#999999"
+                    android:textSize="@dimen/font_size_14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_0.5dp"
+                    android:layout_marginLeft="10dp"
+
+                    android:background="#EBEBEB" />
+            </LinearLayout>
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="18dp"
+                    android:layout_marginLeft="11dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_weight="1"
+                    android:text=" 输入标签3"
+                    android:textColor="#333333"
+                    android:textSize="@dimen/font_size_15sp" />
+
+                <EditText
+                    android:id="@+id/et_biaoqian3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginLeft="@dimen/dimen_6dp"
+                    android:layout_marginRight="11dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/white_et_selector"
+                    android:gravity="end"
+                    android:hint="如:招牌,最多可输入2字,可不填"
+                    android:textColor="#999999"
+                    android:textSize="@dimen/font_size_14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_15dp"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="18dp"
+                    android:layout_marginLeft="11dp"
+                    android:layout_marginTop="15dp"
+                    android:text=" 餐盒数"
+                    android:textColor="#333333"
+                    android:textSize="@dimen/font_size_15sp" />
+
+                <EditText
+                    android:id="@+id/et_lunch_box_num"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginLeft="@dimen/dimen_6dp"
+                    android:layout_marginRight="11dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/white_et_selector"
+                    android:gravity="end"
+                    android:hint="请输入餐盒数"
+                    android:textColor="#999999"
+                    android:textSize="@dimen/font_size_14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_0.5dp"
+                    android:layout_marginLeft="10dp"
+
+                    android:background="#EBEBEB" />
+            </LinearLayout>
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="18dp"
+                    android:layout_marginLeft="11dp"
+                    android:layout_marginTop="15dp"
+                    android:text=" 餐盒价格"
+                    android:textColor="#333333"
+                    android:textSize="@dimen/font_size_15sp" />
+
+                <EditText
+                    android:id="@+id/et_lunch_box_price"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginLeft="@dimen/dimen_6dp"
+                    android:layout_marginRight="11dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/white_et_selector"
+                    android:gravity="end"
+                    android:hint="请输入餐盒价格"
+                    android:inputType="numberDecimal"
+                    android:textColor="#999999"
+                    android:textSize="@dimen/font_size_14sp" />
+            </LinearLayout>
+            <!--描述信息-->
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_15dp"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="18dp"
+                    android:layout_marginLeft="11dp"
+                    android:layout_marginTop="15dp"
+                    android:text=" 描述信息"
+                    android:textColor="#333333"
+                    android:textSize="@dimen/font_size_15sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/white"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dimen_0.5dp"
+                        android:layout_marginLeft="10dp"
+
+                        android:background="#EBEBEB" />
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/et_describe"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="11dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/white_et_selector"
+                    android:gravity="left|top"
+                    android:hint=""
+                    android:lines="4"
+                    android:textColor="#999999"
+                    android:textSize="@dimen/font_size_14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_15dp"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginBottom="18dp"
+                    android:layout_marginLeft="11dp"
+                    android:layout_marginTop="15dp"
+                    android:text="库存"
+                    android:textColor="#333333"
+                    android:textSize="@dimen/font_size_15sp" />
+
+                <EditText
+                    android:id="@+id/et_stock"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginLeft="@dimen/dimen_6dp"
+                    android:layout_marginRight="11dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/white_et_selector"
+                    android:gravity="end"
+                    android:hint="请输入库存数量"
+                    android:textColor="#999999"
+                    android:textSize="@dimen/font_size_14sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

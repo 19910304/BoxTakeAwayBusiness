@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_new"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_action_header"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/ll_header_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:minWidth="56dp"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/dimen_12dp">
+
+            <ImageButton
+
+                android:layout_width="@dimen/dimen_12dp"
+                android:layout_height="22dp"
+                android:layout_gravity="center"
+                android:background="@mipmap/back_new"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/header_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="返回"
+                android:textColor="#333333"
+                android:textSize="@dimen/font_size_16sp"
+                android:visibility="visible" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/header_title"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/dimen_12dp"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxEms="6"
+                android:singleLine="true"
+                android:text="新增菜单"
+                android:textColor="#333333"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="56dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/bt_save_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:paddingTop="@dimen/dimen_12dp"
+                android:text="保存"
+                android:textColor="#333333"
+                android:textSize="@dimen/font_size_14sp"
+                android:visibility="visible" />
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_15dp"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="18dp"
+            android:layout_marginLeft="11dp"
+            android:layout_marginTop="15dp"
+            android:text=" 菜单名称"
+            android:textColor="#333333"
+            android:textSize="@dimen/font_size_15sp" />
+
+        <EditText
+            android:id="@+id/et_menu_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="16dp"
+            android:layout_marginLeft="@dimen/dimen_6dp"
+            android:layout_marginRight="11dp"
+            android:layout_marginTop="15dp"
+            android:layout_weight="1"
+            android:background="@drawable/white_et_selector"
+            android:gravity="end"
+            android:hint="请输入菜单名(最多4个字)"
+            android:maxLength="4"
+            android:textColor="#999999"
+            android:textSize="@dimen/font_size_14sp" />
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_15dp"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="18dp"
+            android:layout_marginLeft="11dp"
+            android:layout_marginTop="15dp"
+            android:text=" 描述信息"
+            android:textColor="#333333"
+            android:textSize="@dimen/font_size_15sp" />
+
+        <EditText
+            android:id="@+id/et_menu_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="16dp"
+            android:layout_marginLeft="@dimen/dimen_6dp"
+            android:layout_marginRight="11dp"
+            android:layout_marginTop="15dp"
+            android:layout_weight="1"
+            android:background="@drawable/white_et_selector"
+            android:gravity="end"
+            android:hint="请简要概括"
+            android:textColor="#999999"
+            android:textSize="@dimen/font_size_14sp" />
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_new"
+    android:orientation="vertical">
+    <!--预订单-->
+    <include layout="@layout/action_header"></include>
+
+    <com.xinzuokeji.boxtakeawaybusiness.util.listviewshangxia.XListView
+        android:id="@+id/xlv_advance_order"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="@dimen/dimen_14dp"
+        android:divider="@color/background_new"
+        android:dividerHeight="@dimen/dimen_12dp"
+        android:scrollbars="none" />
+</LinearLayout>

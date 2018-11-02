@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">禾籽外卖商家</string>
+    <string name="xlistview_header_hint_normal">下拉刷新</string>
+    <string name="xlistview_header_hint_ready">松开刷新数据</string>
+    <string name="xlistview_header_hint_loading">正在加载&#8230;</string>
+    <string name="xlistview_footer_hint_ready">松开载入更多</string>
+    <string name="xlistview_footer_hint_normal">查看更多</string>
+    <string name="xlistview_header_last_time">上次更新时间：</string>
+    <string name="action_pick">从手机相册选择</string>
+    <string name="action_capture">拍照</string>
+    <string name="fragment_me_thumbnail">上传图片</string>
+    <string name="not_find_phone_sd">没找到手机SD卡，图像无法上传！</string>
+    <string name="action_picture_select">拍照</string>
+    <string name="change_shipping_method">变更配送帮助</string>
+    <string name="shipping_contents">1.联系业务经理，提出配送方式申请\n2.修改成功之后，您将收到系统下发的银行账户信息变更成功提示短信\n3.商家端也将显示修改结果
+</string>
+    <string name="change_bank_info">变更银行账户帮助</string>
+    <string name="bank_contents">1.联系业务经理，递交申请材料并签订变更合同，申请材料包括：\n身份证复印件\n银行卡复印件\n2.业务经理在系统提交变更资料，您将收到系统下发的信息审核提示短信\n3.审核通过后，您将收到系统下发的银行账户信息变更成功提示短信;
+</string>
+    <string name="confirm">确定</string>
+    <string name="cancel">取消</string>
+    <string name="call_jingli">联系业务经理</string>
+    <string name="network_error">网络异常</string>
+    <!--应用版本更新-->
+    <string name="soft_update_title">应用更新至:</string>
+    <string name="soft_update_info">更新信息</string>
+    <string name="soft_update_updatebtn">更新</string>
+    <string name="soft_update_later">下次更新</string>
+    <string name="soft_updating">版本更新中</string>
+    <string name="soft_update_cancel">取消更新</string>
+</resources>

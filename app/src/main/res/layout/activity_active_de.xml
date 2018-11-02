@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_new"
+    android:orientation="vertical">
+
+    <include layout="@layout/action_header"></include>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dimen_20dp"
+            android:layout_marginLeft="@dimen/dimen_16dp"
+            android:layout_marginTop="16dp"
+            android:text="开始日期"
+            android:textColor="#333333"
+            android:textSize="@dimen/font_size_15sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dimen_20dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="16dp"
+            android:text="2018年12月15日"
+            android:textColor="#333333"
+            android:textSize="@dimen/font_size_15sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_0.5dp"
+            android:layout_marginLeft="10dp"
+            android:background="#EBEBEB" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dimen_20dp"
+            android:layout_marginLeft="@dimen/dimen_16dp"
+            android:layout_marginTop="16dp"
+            android:text="开始日期"
+            android:textColor="#333333"
+            android:textSize="@dimen/font_size_15sp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dimen_20dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/white_et_selector"
+            android:hint="请输入xxxx年xx月xx日"
+            android:textColorHint="#999999"
+            android:textSize="@dimen/font_size_15sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dimen_20dp"
+            android:layout_marginLeft="@dimen/dimen_16dp"
+            android:layout_marginTop="16dp"
+            android:text="每满"
+            android:textColor="#333333"
+            android:textSize="@dimen/font_size_15sp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dimen_20dp"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/white_et_selector"
+            android:hint="请输入金额"
+            android:textColorHint="#999999"
+            android:textSize="@dimen/font_size_15sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_0.5dp"
+            android:layout_marginLeft="10dp"
+            android:background="#EBEBEB" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dimen_20dp"
+            android:layout_marginLeft="@dimen/dimen_16dp"
+            android:layout_marginTop="16dp"
+            android:text="就送"
+            android:textColor="#333333"
+            android:textSize="@dimen/font_size_15sp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dimen_20dp"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/white_et_selector"
+            android:hint="请输入金额"
+            android:textColorHint="#999999"
+            android:textSize="@dimen/font_size_15sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="@dimen/dimen_16dp"
+            android:layout_marginTop="@dimen/dimen_20dp"
+            android:text="点击保存即视为商家同意《商家自营销协议》"
+            android:textColor="#666666"
+            android:textSize="@dimen/font_size_12sp" />
+    </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/withdraw_bt_selector"
+        android:text="保存"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_size_16sp" />
+</LinearLayout>

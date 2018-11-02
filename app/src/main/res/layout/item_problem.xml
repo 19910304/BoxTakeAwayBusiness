@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/font_size_18sp"
+            android:background="@mipmap/liuliang" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="起送价高"
+            android:textColor="@color/black_text"
+            android:textSize="@dimen/font_size_14sp"
+            android:layout_marginTop="@dimen/dimen_12dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dimen_14dp"
+            android:layout_marginTop="7dp"
+            android:text="高于73.00%商户"
+            android:textColor="#999999"
+            android:textSize="@dimen/font_size_12sp" />
+    </LinearLayout>
+</LinearLayout>

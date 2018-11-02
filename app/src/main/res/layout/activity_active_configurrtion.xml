@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_new"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_action_header"
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:paddingTop="@dimen/dimen_12dp"
+
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+
+        <LinearLayout
+            android:id="@+id/ll_header_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:minWidth="56dp"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/header_back"
+                android:layout_width="12dp"
+                android:layout_height="@dimen/dimen_24dp"
+                android:layout_gravity="center"
+                android:background="@mipmap/back_bl"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/tv_save"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="返回"
+                android:textColor="#333333"
+                android:textSize="@dimen/font_size_15sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dimen_32dp"
+            android:layout_marginRight="@dimen/dimen_32dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <RadioGroup
+                android:id="@+id/rdg_active"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_32dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rdb_new"
+                    android:layout_width="@dimen/dimen_36dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/active_selector"
+                    android:button="@null"
+                    android:checked="true"
+                    android:gravity="center"
+                    android:text="新建"
+                    android:textColor="@color/active_text_selector"
+                    android:textSize="@dimen/font_size_15sp" />
+                <!---->
+                <RadioButton
+                    android:id="@+id/rdb_me"
+                    android:layout_width="@dimen/dimen_36dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/active_me_selector"
+                    android:button="@null"
+
+                    android:gravity="center"
+                    android:text="我的"
+                    android:textColor="@color/active_text_selector"
+                    android:textSize="@dimen/font_size_15sp" />
+
+
+            </RadioGroup>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:minWidth="56dp"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/header_edit1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:visibility="gone" />
+
+            <ImageButton
+                android:id="@+id/header_edit"
+                android:layout_width="56dp"
+                android:layout_height="match_parent"
+                android:background="@null"
+
+                android:visibility="gone" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/lv_active"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/dimen_20dp"
+        android:background="@color/white"
+        android:visibility="visible">
+
+    </ListView>
+
+    <LinearLayout
+        android:id="@+id/ll_me"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/dimen_14dp"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp"
+        android:paddingTop="11dp"
+        android:visibility="gone">
+
+        <RadioGroup
+            android:id="@+id/rdg_active_me"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_32dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rdg_daikaishi"
+                android:layout_width="@dimen/dimen_36dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/active_daikaishi_selector"
+                android:button="@null"
+                android:checked="true"
+                android:gravity="center"
+                android:text="待开始"
+                android:textColor="@color/active_item_selector"
+                android:textSize="13sp" />
+            <!---->
+            <RadioButton
+                android:id="@+id/rdg_jingixng"
+                android:layout_width="@dimen/dimen_36dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/active_jingxing_selector"
+                android:button="@null"
+                android:gravity="center"
+                android:text="进行中"
+                android:textColor="@color/active_item_selector"
+                android:textSize="@dimen/font_size_15sp" />
+
+            <RadioButton
+                android:id="@+id/rdg_jiehsu"
+                android:layout_width="@dimen/dimen_36dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/active_jieshu_selector"
+                android:button="@null"
+                android:gravity="center"
+                android:text="已结束"
+                android:textColor="@color/active_item_selector"
+                android:textSize="@dimen/font_size_15sp" />
+        </RadioGroup>
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/lv_me_active"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+</LinearLayout>

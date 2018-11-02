@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_invalid_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="@dimen/dimen_15dp"
+            android:text="顾客取消订单"
+            android:textColor="@color/black_text"
+            android:textSize="@dimen/font_size_14sp" />
+
+        <TextView
+            android:id="@+id/tv_invalid_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:text="2018.03.13 15:33:45"
+            android:textColor="@color/gray_text"
+            android:textSize="@dimen/font_size_12sp" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dimen_14dp"
+        android:layout_marginRight="@dimen/dimen_14dp"
+        android:layout_marginTop="@dimen/dimen_20dp"
+        android:background="@mipmap/back_gray" />
+</LinearLayout>

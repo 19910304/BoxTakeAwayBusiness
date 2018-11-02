@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/action_header_new"></include>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+
+        <RadioGroup
+            android:id="@+id/rdg_tenement_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_32dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="11dp"
+            android:layout_marginLeft="43dp"
+            android:layout_marginRight="43dp"
+            android:layout_marginTop="11dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rdb_tenement_yesterday"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="-1dp"
+                android:layout_weight="1"
+                android:background="@drawable/yestoday_customer_analyze_selector"
+                android:button="@null"
+                android:checked="true"
+                android:gravity="center"
+                android:text="昨天"
+                android:textColor="@color/customer_analyze_selector"
+                android:textSize="@dimen/font_size_12sp" />
+
+
+            <RadioButton
+                android:id="@+id/rdb_tenement_seven_day"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/seven_customer_analyze_selector"
+                android:button="@null"
+
+                android:gravity="center"
+                android:text="近7天"
+                android:textColor="@color/customer_analyze_selector"
+                android:textSize="@dimen/font_size_12sp" />
+
+            <!---->
+            <RadioButton
+                android:id="@+id/rdb_tenement_month"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="-1dp"
+                android:layout_weight="1"
+                android:background="@drawable/day_customer_analyze_selector"
+                android:button="@null"
+                android:gravity="center"
+                android:text="近30天"
+                android:textColor="@color/customer_analyze_selector"
+                android:textSize="@dimen/font_size_12sp" />
+
+
+        </RadioGroup>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="9dp"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_sales_ranking"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="9dp"
+                    android:layout_marginLeft="11dp"
+                    android:layout_marginTop="13dp"
+                    android:text="本周销售额排行"
+                    android:textColor="@color/black_text"
+                    android:textSize="@dimen/font_size_15sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_0.5dp"
+                    android:background="#EBEBEB" />
+            </LinearLayout>
+
+            <ListView
+                android:id="@+id/lv_sales_ranking"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="9dp"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_consider"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="9dp"
+                    android:layout_marginLeft="11dp"
+                    android:layout_marginTop="13dp"
+                    android:text="本周销量排行"
+                    android:textColor="@color/black_text"
+                    android:textSize="@dimen/font_size_15sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_0.5dp"
+                    android:background="#EBEBEB" />
+            </LinearLayout>
+
+            <ListView
+                android:id="@+id/lv_consider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="9dp"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="9dp"
+                    android:layout_marginLeft="11dp"
+                    android:layout_marginTop="@dimen/dimen_14dp"
+                    android:drawablePadding="@dimen/dimen_8dp"
+                    android:drawableRight="@mipmap/fenxi3"
+                    android:text="数据趋势"
+                    android:textColor="@color/black_text"
+                    android:textSize="@dimen/font_size_15sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/tv_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="9dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="@dimen/dimen_14dp"
+                    android:text="2018.03.01-2018.03.08"
+                    android:textColor="#999999"
+                    android:textSize="13sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_0.5dp"
+                    android:background="#EBEBEB" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <RadioGroup
+                    android:id="@+id/rdg_tenement_bottom5"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_32dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="11dp"
+                    android:layout_marginLeft="43dp"
+                    android:layout_marginRight="43dp"
+                    android:layout_marginTop="11dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rdb_tenement_notification4"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="@dimen/dimen_16dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/commercial_analysis_selector"
+                        android:button="@null"
+                        android:checked="true"
+                        android:gravity="center"
+                        android:text="营业额"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/font_size_12sp" />
+
+
+                    <RadioButton
+                        android:id="@+id/rdb_tenement_announcement2"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/commercial_analysis_selector"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:text="销量"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/font_size_12sp" />
+
+                    <!---->
+                    <RadioButton
+                        android:id="@+id/rdb_tenement1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="16dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/commercial_analysis_selector"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:text="好评"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/font_size_12sp" />
+
+
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:orientation="vertical">
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

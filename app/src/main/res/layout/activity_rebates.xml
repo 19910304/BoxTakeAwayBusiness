@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_new"
+    android:orientation="vertical">
+
+    <include layout="@layout/action_header"></include>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--退订菜品-->
+            <ListView
+                android:id="@+id/lv_caipin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:background="@color/white"
+                android:scrollbars="none" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_0.5dp"
+                    android:layout_marginLeft="10dp"
+
+                    android:background="#F0F0F0" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="11dp"-->
+                <!--android:layout_marginTop="@dimen/dimen_16dp"-->
+                <!--android:text="退款金额"-->
+                <!--android:textColor="@color/black_text"-->
+                <!--android:textSize="@dimen/font_size_15sp" />-->
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dimen_24dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="@dimen/dimen_15dp"
+                    android:layout_marginTop="@dimen/dimen_14dp"
+                    android:text="备注：单独商品部分退款金额按照刨除配送费用商品优惠活动价格返回。"
+                    android:textColor="#666666"
+                    android:textSize="11sp" />
+
+                <TextView
+                    android:id="@+id/tv_rebates_all_money"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginBottom="25dp"
+                    android:layout_marginRight="@dimen/font_size_18sp"
+                    android:text="退款金额 ￥22.58"
+                    android:textColor="@color/black_text"
+                    android:textSize="@dimen/font_size_15sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dimen_8dp"
+                    android:layout_marginLeft="11dp"
+                    android:layout_marginTop="@dimen/dimen_16dp"
+                    android:text="选择退款原因"
+                    android:textColor="@color/gray_dark"
+                    android:textSize="13sp" />
+            </LinearLayout>
+            <!--退订原因-->
+            <ListView
+                android:id="@+id/lv_Reason"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:scrollbars="none" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dimen_8dp"
+                    android:layout_marginLeft="11dp"
+                    android:layout_marginTop="@dimen/dimen_16dp"
+                    android:text="填写退款原因"
+                    android:textColor="@color/gray_dark"
+                    android:textSize="13sp" />
+
+                <EditText
+                    android:id="@+id/et_rebates"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/white_et_selector"
+                    android:gravity="start|top"
+                    android:hint="请详细说明退款原因"
+                    android:lines="5"
+                    android:paddingLeft="11dp"
+                    android:paddingTop="@dimen/dimen_14dp"
+                    android:textColor="@color/gray_text"
+                    android:textSize="@dimen/font_size_15sp" />
+            </LinearLayout>
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="13dp"
+                android:layout_marginTop="22dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="注：请"
+                    android:textColor="@color/black_text"
+                    android:textSize="@dimen/font_size_14sp" />
+
+                <TextView
+                    android:id="@+id/tv_call_suer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:text="联系用户"
+                    android:textColor="#2071EB"
+                    android:textSize="@dimen/font_size_14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="，再提交退款"
+                    android:textColor="@color/black_text"
+                    android:textSize="@dimen/font_size_14sp" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/bt_sub_rebates"
+                android:layout_width="match_parent"
+                android:layout_height="41dp"
+                android:layout_marginBottom="25dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/withdraw_bt_selector"
+                android:text="提交"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_size_16sp" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

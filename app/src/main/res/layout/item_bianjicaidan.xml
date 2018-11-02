@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="13dp"
+        android:layout_marginLeft="@dimen/dimen_16dp"
+        android:layout_marginTop="13dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_caipin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="热销"
+            android:textColor="#333333"
+            android:textSize="@dimen/font_size_15sp" />
+
+        <TextView
+            android:id="@+id/tv_shangpin_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="16个商品"
+            android:textColor="#999999"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_16dp"
+        android:layout_marginRight="@dimen/dimen_20dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/bt_bianji_caidan"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_marginBottom="@dimen/dimen_16dp"
+            android:layout_marginLeft="30dp"
+            android:background="@drawable/shangpin_guanli_selector"
+            android:text="编辑菜单"
+            android:textColor="#666666" />
+
+        <Button
+            android:id="@+id/bt_new_shpin"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_marginBottom="@dimen/dimen_16dp"
+            android:layout_marginLeft="@dimen/dimen_16dp"
+            android:background="@drawable/shangpin_guanli_selector"
+            android:text="新建商品"
+            android:visibility="gone"
+            android:textColor="#FF6B6B" />
+    </LinearLayout>
+</LinearLayout>

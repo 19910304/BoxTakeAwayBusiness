@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_new"
+    android:orientation="vertical">
+
+    <include layout="@layout/action_header"></include>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="@dimen/dimen_20dp"
+            android:text="银行卡"
+            android:textColor="#333333"
+            android:textSize="@dimen/font_size_15sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_bank_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_bank_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dimen_16dp"
+            android:layout_marginLeft="11dp"
+            android:layout_marginTop="@dimen/dimen_16dp"
+            android:text=""
+            android:textColor="#333333"
+            android:textSize="@dimen/font_size_15sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="@dimen/dimen_20dp"
+            android:text="提现金额"
+            android:textColor="#333333"
+            android:textSize="@dimen/font_size_15sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="@dimen/dimen_20dp"
+            android:text="(可提现金额:"
+            android:textColor="#666666"
+            android:textSize="@dimen/font_size_12sp" />
+
+        <TextView
+            android:id="@+id/tv_withdraw_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="@dimen/dimen_20dp"
+            android:text="￥"
+            android:textColor="#3A92FF"
+            android:textSize="@dimen/font_size_12sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="@dimen/dimen_20dp"
+            android:text=")"
+            android:textColor="#666666"
+            android:textSize="@dimen/font_size_12sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dimen_16dp"
+            android:layout_marginLeft="11dp"
+            android:layout_marginTop="@dimen/dimen_16dp"
+            android:background="@drawable/white_et_selector"
+            android:clickable="true"
+            android:text="￥"
+            android:textColor="#333333"
+            android:textSize="22sp" />
+
+        <EditText
+            android:id="@+id/et_money"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dimen_16dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="@dimen/dimen_16dp"
+            android:layout_weight="1"
+            android:background="@drawable/white_et_selector"
+            android:clickable="true"
+            android:hint=""
+            android:inputType="numberDecimal"
+            android:textColor="#333333"
+            android:textColorHint="#333333"
+            android:textSize="22sp" />
+
+        <TextView
+            android:id="@+id/tv_all_withdraw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dimen_16dp"
+            android:layout_marginLeft="11dp"
+            android:layout_marginRight="@dimen/dimen_14dp"
+            android:layout_marginTop="@dimen/dimen_16dp"
+            android:clickable="true"
+            android:text="全部提现"
+            android:textColor="#FE5050"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/bt_withdraw"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_36dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="90dp"
+        android:background="@drawable/withdraw_bt_selector"
+        android:text="提现"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_size_16sp" />
+</LinearLayout>

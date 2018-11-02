@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_new"
+    android:orientation="vertical">
+
+    <include layout="@layout/action_header"></include>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimen_20dp"
+            android:paddingBottom="18dp"
+            android:paddingTop="18dp"
+            android:text="账户类型"
+            android:textColor="@color/black_text"
+            android:textSize="@dimen/font_size_14sp" />
+
+        <CheckBox
+            android:id="@+id/ck_public"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@null"
+            android:button="@null"
+            android:drawableLeft="@drawable/sus_three_bus_indate"
+            android:drawablePadding="@dimen/dimen_8dp"
+            android:paddingBottom="18dp"
+            android:paddingTop="18dp"
+            android:text="对公"
+            android:textColor="@color/black_text"
+            android:textSize="@dimen/font_size_14sp" />
+
+        <CheckBox
+            android:id="@+id/ck_private"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="23dp"
+            android:layout_weight="1"
+            android:background="@null"
+            android:button="@null"
+            android:checked="true"
+            android:drawableLeft="@drawable/sus_three_bus_indate"
+            android:drawablePadding="@dimen/dimen_8dp"
+            android:paddingBottom="18dp"
+            android:paddingTop="18dp"
+            android:text="对私"
+            android:textColor="@color/black_text"
+            android:textSize="@dimen/font_size_14sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_0.5dp"
+            android:layout_marginLeft="20dp"
+            android:background="#EBEBEB" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="18dp"
+            android:layout_marginLeft="@dimen/dimen_20dp"
+            android:layout_marginTop="18dp"
+            android:text="开户人姓名"
+            android:textColor="@color/black_text"
+            android:textSize="@dimen/font_size_14sp" />
+
+        <EditText
+            android:id="@+id/et_account_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="18dp"
+            android:layout_marginRight="@dimen/dimen_14dp"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/white_et_selector"
+            android:hint="输入开户人姓名"
+            android:textColor="#999999"
+            android:textColorHint="#999999"
+            android:textSize="@dimen/font_size_14sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_0.5dp"
+            android:layout_marginLeft="20dp"
+            android:background="#EBEBEB" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="18dp"
+            android:layout_marginLeft="@dimen/dimen_20dp"
+            android:layout_marginTop="18dp"
+            android:text="银行卡账号"
+            android:textColor="@color/black_text"
+            android:textSize="@dimen/font_size_14sp" />
+
+        <EditText
+            android:id="@+id/et_account_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="18dp"
+            android:layout_marginRight="@dimen/dimen_14dp"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/white_et_selector"
+            android:hint="0000 0000 0000 0000 000"
+            android:inputType="number"
+            android:maxLength="26"
+            android:singleLine="true"
+            android:textColor="#999999"
+            android:textColorHint="#999999"
+            android:textSize="@dimen/font_size_14sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_0.5dp"
+            android:layout_marginLeft="20dp"
+            android:background="#EBEBEB" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_bank_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:visibility="visible">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="18dp"
+            android:layout_marginLeft="@dimen/dimen_20dp"
+            android:layout_marginTop="18dp"
+            android:text="开户行"
+            android:textColor="@color/black_text"
+            android:textSize="@dimen/font_size_14sp" />
+
+        <TextView
+            android:id="@+id/tv_choose_bank"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="18dp"
+            android:layout_marginRight="@dimen/dimen_14dp"
+            android:layout_marginTop="18dp"
+            android:layout_weight="1"
+            android:background="@drawable/white_et_selector"
+            android:text="选择开户行"
+            android:textColor="#999999"
+            android:textSize="@dimen/font_size_14sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="18dp"
+            android:layout_marginRight="@dimen/dimen_14dp"
+            android:layout_marginTop="18dp"
+            android:background="@mipmap/qqwww" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="23dp"
+            android:layout_marginTop="@dimen/dimen_24dp"
+            android:text="开店成功即为同意"
+            android:textColor="#666666" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_24dp"
+            android:text="《禾籽外卖商家入驻协议》"
+            android:textColor="#FF5969" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal" />
+
+    <Button
+        android:id="@+id/bt_finish_shop"
+        android:layout_width="match_parent"
+        android:layout_height="41dp"
+        android:layout_marginBottom="@dimen/dimen_12dp"
+        android:layout_marginLeft="@dimen/dimen_16dp"
+        android:layout_marginRight="@dimen/dimen_16dp"
+        android:layout_marginTop="@dimen/dimen_36dp"
+        android:background="@drawable/set_up_shop_selector"
+        android:text="完成"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_size_15sp" />
+</LinearLayout>

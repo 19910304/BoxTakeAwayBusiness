@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_new"
+    android:orientation="vertical">
+
+    <include layout="@layout/action_header"></include>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dimen_16dp"
+            android:layout_marginLeft="11dp"
+            android:layout_marginTop="@dimen/dimen_16dp"
+            android:layout_weight="1"
+            android:text="开启极速退款"
+            android:textColor="@color/black_text"
+            android:textSize="@dimen/font_size_16sp" />
+
+        <Switch
+            android:id="@+id/sw_on_off_refund"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dimen_16dp"
+            android:layout_marginRight="11dp"
+            android:layout_marginTop="@dimen/dimen_16dp"
+            android:button="@null" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="11dp"
+            android:layout_marginRight="@dimen/dimen_15dp"
+            android:layout_marginTop="@dimen/dimen_15dp"
+            android:text="极速退款是一种商家可选的退款升级服务，开通服务后，商家接单15分钟内，消费者可快速无理由退款"
+            android:textColor="#666666"
+            android:textSize="@dimen/font_size_14sp" />
+    </LinearLayout>
+</LinearLayout>

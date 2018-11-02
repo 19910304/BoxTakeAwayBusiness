@@ -1,0 +1,100 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 27
+    buildToolsVersion "27.0.3"
+    defaultConfig {
+        applicationId "com.xinzuokeji.boxtakeawaybusiness"
+        minSdkVersion 15
+        targetSdkVersion 27
+        versionCode 100
+        versionName "1.0.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        //支持矢量图
+        vectorDrawables.useSupportLibrary = true
+        ndk {
+            //选择要添加的对应cpu类型的.so库。为了兼容cpu，查看官网SDK的libs多添加几个
+            abiFilters 'arm64-v8a', 'armeabi', 'armeabi-v7a', 'mips', 'mips64', 'x86', 'x86_64'
+//            abiFilters 'armeabi', 'x86'
+        }
+        multiDexEnabled true
+    }
+    configurations.all {
+        resolutionStrategy {
+            force 'com.android.support:support-v4:27.1.0'
+        }
+    }
+//    aaptOptions {
+//        additionalParameters "--no-version-vectors"
+//    }
+    repositories {
+        flatDir {
+            dirs 'libs' //this way we can find the .aar file in libs folder
+        }
+    }
+    signingConfigs {
+        release {
+            storeFile file('D:\\appkey\\APPKEYbok\\keystore.jks')
+            storePassword('hezibok369')
+            keyAlias('key0')
+            keyPassword('hezibok369')
+        }
+        debug {
+            storeFile file('D:\\appkey\\APPKEYbok\\keystore.jks')
+            storePassword('hezibok369')
+            keyAlias('key0')
+            keyPassword('hezibok369')
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation 'cz.msebera.android:httpclient:4.4.1.2'
+    implementation files('libs/nineoldandroids-2.4.0.jar')
+    implementation files('libs/android-async-http.jar')
+    implementation files('libs/basic-http-client-android-0.88.jar')
+    implementation files('libs/CircleImageView.jar')
+    implementation 'com.android.support:recyclerview-v7:27.1.1'
+    implementation project(':convenientbanner')
+    implementation project(':canrefresh')
+    //语音
+    // 阿里云推送
+    implementation 'com.aliyun.ams:alicloud-android-push:3.1.2'
+    implementation(name: 'alicloud-android-third-push-3.0.5', ext: 'aar')
+    implementation files('libs/alipaySdk-20180403.jar')
+    implementation files('libs/AMap_Search_V6.1.0_20180330.jar')
+    implementation files('libs/AMap3DMap_6.4.0_AMapNavi_6.2.0_20180814.jar')
+    implementation files('libs/AMap_Location_V4.2.0_20180809.jar')
+    //    微信支付
+    implementation 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+'
+    //    implementation project(':imagepicker')
+    implementation project(':picture_library')
+    implementation files('libs/Msc.jar')
+    implementation project(':oss-android-sdk')
+    // gson解析
+    implementation 'com.google.code.gson:gson:2.8.1'
+    implementation files('libs/universal-image-loader-1.9.5.jar')
+    //ZXing
+    implementation project(':Libzxing')
+    //noinspection GradleCompatible
+    implementation 'com.github.ywp0919:AddressPickerLib:1.0.1'
+    implementation 'com.android.support:design:27.1.0'
+    implementation 'com.github.gittjy:LoadingDialog:1.0.2'
+}

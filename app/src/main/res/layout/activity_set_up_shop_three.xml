@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_new"
+    android:orientation="vertical">
+
+    <include layout="@layout/action_header"></include>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        android:background="@color/white"
+        android:orientation="vertical">
+        <!--营业执照-->
+        <LinearLayout
+            android:id="@+id/ll_business_license"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dimen_14dp"
+            android:layout_marginTop="19dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:text="*"
+                android:textColor="@color/red" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_4dp"
+                android:text="营业执照"
+                android:textColor="@color/black_text"
+                android:textSize="@dimen/font_size_14sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="(或特许证件)"
+                android:textColor="@color/black_text"
+                android:textSize="@dimen/font_size_12sp" />
+
+            <TextView
+                android:id="@+id/tv_card_license"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="未完成"
+                android:textColor="#999999"
+                android:textSize="13sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/dimen_8dp"
+                android:layout_marginRight="17dp"
+                android:background="@mipmap/qqwww" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dimen_14dp"
+            android:layout_marginLeft="17dp"
+            android:layout_marginRight="@dimen/dimen_14dp"
+            android:background="#FAFAFA"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="@dimen/dimen_12dp"
+                android:layout_marginTop="10dp"
+                android:text="无营业执照可上传特许证件代替"
+                android:textColor="#666666"
+                android:textSize="13sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        android:background="@color/white"
+        android:orientation="vertical">
+        <!--法人身份证-->
+        <LinearLayout
+            android:id="@+id/ll_corporate_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dimen_14dp"
+            android:layout_marginTop="19dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:text="*"
+                android:textColor="@color/red" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:text="法人代表手持身份证照"
+                android:textColor="@color/black_text"
+                android:textSize="@dimen/font_size_14sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="(或特许证件)"
+                android:textColor="@color/black_text"
+                android:textSize="@dimen/font_size_12sp"
+                android:visibility="invisible" />
+
+            <TextView
+                android:id="@+id/tv_id_card"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="未完成"
+                android:textColor="#999999"
+                android:textSize="13sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/dimen_8dp"
+                android:layout_marginRight="17dp"
+                android:background="@mipmap/qqwww" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dimen_14dp"
+            android:layout_marginLeft="17dp"
+            android:layout_marginRight="@dimen/dimen_14dp"
+            android:background="#FAFAFA"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="@dimen/dimen_12dp"
+                android:layout_marginRight="22dp"
+                android:layout_marginTop="10dp"
+                android:text="需上传法人代表或特许证件申请人手持身份证照，身份 证可用其他有效证件代替"
+                android:textColor="#666666"
+                android:textSize="13sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        android:background="@color/white"
+        android:orientation="vertical">
+        <!--许可证-->
+        <LinearLayout
+            android:id="@+id/ll_licence"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dimen_14dp"
+            android:layout_marginTop="19dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:text="*"
+                android:textColor="@color/red" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:text="许可证"
+                android:textColor="@color/black_text"
+                android:textSize="@dimen/font_size_14sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="(或特许证件)"
+                android:textColor="@color/black_text"
+                android:textSize="@dimen/font_size_12sp" />
+
+            <TextView
+                android:id="@+id/tv_card_licence"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="未完成"
+                android:textColor="#999999"
+                android:textSize="13sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/dimen_8dp"
+                android:layout_marginRight="17dp"
+                android:background="@mipmap/qqwww" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dimen_14dp"
+            android:layout_marginLeft="17dp"
+            android:layout_marginRight="@dimen/dimen_14dp"
+            android:background="#FAFAFA"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="@dimen/dimen_12dp"
+                android:layout_marginTop="10dp"
+                android:text="无许可证可上传有效特许证件代替"
+                android:textColor="#666666"
+                android:textSize="13sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <Button
+        android:id="@+id/bt_next_shop"
+        android:layout_width="match_parent"
+        android:layout_height="41dp"
+        android:layout_marginBottom="@dimen/dimen_12dp"
+        android:layout_marginLeft="@dimen/dimen_16dp"
+        android:layout_marginRight="@dimen/dimen_16dp"
+        android:layout_marginTop="@dimen/dimen_36dp"
+        android:background="@drawable/set_up_shop_selector"
+        android:text="下一步"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_size_15sp" />
+</LinearLayout>

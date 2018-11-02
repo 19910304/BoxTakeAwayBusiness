@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <!-- 颜色定义 -->
+    <color name="background">#f0efed</color>
+    <color name="transparent">#00000000</color>
+    <color name="transparent_1">#f0000000</color>
+    <color name="dialog_background">#B0000000</color>
+    <color name="black_translucence">#66000000</color>
+    <color name="gray_dark">#666666</color>
+    <color name="gray_light">#9f9f9f</color>
+    <color name="white">#ffffff</color>
+    <color name="white_translucence">#CCffffff</color>
+
+    <color name="white_11">#F5F5F5</color>
+    <color name="black">#333333</color>
+    <color name="black_text">#333333</color>
+    <color name="gray_text">#999999</color>
+    <color name="white_ee">#eeffffff</color>
+    <color name="red">#FA6161</color>
+    <color name="red_cus">#FF5F5F</color>
+    <!--DBDBDB-->
+    <color name="gray">#DBDBDB</color>
+    <color name="background_new">#EBEBEB</color>
+    resources>
+    <color name="holo_purple">#ffaa66cc</color>
+    <color name="blue">#bf61fa</color>
+
+    <color name="orange">#ff6c00</color>
+    <color name="holo_purple2">#FF5F5F</color>
+</resources>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/img_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/shop_type_selector"
+        android:layout_marginLeft="@dimen/dimen_24dp"
+        android:drawablePadding="@dimen/dimen_4dp"
+        android:paddingTop="19dp" />
+
+    <TextView
+        android:id="@+id/tv_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="@dimen/dimen_4dp"
+        android:paddingBottom="19dp"
+        android:paddingLeft="@dimen/dimen_4dp"
+        android:paddingTop="19dp"
+        android:text=""
+        android:textColor="#666666"
+        android:textSize="@dimen/font_size_14sp" />
+
+
+    <!--<CheckBox-->
+    <!--android:id="@+id/ck_type"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:button="@null"-->
+    <!--android:drawableLeft="@drawable/shop_type_selector"-->
+
+    <!--android:drawablePadding="@dimen/dimen_4dp"-->
+    <!--android:paddingBottom="19dp"-->
+    <!--android:paddingLeft="@dimen/dimen_16dp"-->
+    <!--android:paddingTop="19dp"-->
+    <!--android:text="sss"-->
+    <!--android:textColor="#666666"-->
+    <!--android:textSize="@dimen/font_size_14sp" />-->
+</LinearLayout>

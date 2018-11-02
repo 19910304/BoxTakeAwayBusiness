@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_new"
+    android:orientation="vertical">
+
+    <include layout="@layout/action_header"></include>
+
+    <ImageView
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/dimen_36dp"
+        android:background="@mipmap/store_type" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="60dp"
+        android:text="先简单介绍下你的店铺吧"
+        android:textColor="@color/black_text"
+        android:textSize="@dimen/font_size_18sp" />
+
+    <EditText
+        android:id="@+id/et_shop_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="@dimen/dimen_36dp"
+        android:background="@drawable/register_et_selector"
+        android:hint="请输入您的店铺名字"
+        android:textColor="#B3B3B3"
+        android:textColorHint="#B3B3B3"
+        android:textSize="@dimen/font_size_15sp"
+
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="@dimen/dimen_12dp"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_0.5dp"
+            android:layout_marginLeft="10dp"
+            android:background="#EBEBEB" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_selector_store"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_shop_type"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_weight="1"
+            android:text="选择门店分类"
+            android:textColor="#B3B3B3"
+            android:textSize="@dimen/font_size_15sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="26dp"
+            android:background="@mipmap/qqwww" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/bt_next_shop"
+        android:layout_width="match_parent"
+        android:layout_height="41dp"
+        android:layout_marginLeft="@dimen/dimen_16dp"
+        android:layout_marginRight="@dimen/dimen_16dp"
+        android:layout_marginTop="@dimen/dimen_36dp"
+        android:background="@drawable/set_up_shop_selector"
+        android:text="下一步"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_size_15sp" />
+</LinearLayout>

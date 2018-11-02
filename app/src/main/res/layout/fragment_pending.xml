@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_new"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/red"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="24dp"
+            android:text="待处理"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_size_20sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_20dp"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/tv_pending_new_order"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#FFF45C"
+                    android:gravity="center_horizontal"
+                    android:text="新"
+                    android:textColor="@color/red_cus"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/tv_pending_wait_distribution"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+
+                    android:gravity="center_horizontal"
+                    android:text="待发配送"
+                    android:textColor="#F5F5F5"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/tv_pending_reminder"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+
+                    android:gravity="center_horizontal"
+                    android:text="催单"
+                    android:textColor="#F5F5F5"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/tv_pending_refund"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:text="退款"
+                    android:textColor="#F5F5F5"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <RadioGroup
+                android:id="@+id/rdg_pending"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10.5dp"
+                android:layout_marginTop="@dimen/dimen_16dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rdb_pending_new_order"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@null"
+                    android:checked="true"
+                    android:drawablePadding="@dimen/dimen_8dp"
+                    android:drawableTop="@drawable/pending_new_order_selector"
+                    android:gravity="center_horizontal"
+                    android:text="新订单"
+                    android:textColor="@color/order_text_selector"
+                    android:textSize="13sp" />
+
+
+
+                <RadioButton
+                    android:id="@+id/rdb_pending_wait_distribution"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@null"
+                    android:drawablePadding="@dimen/dimen_8dp"
+                    android:drawableTop="@drawable/pending_wait_distribution_selector"
+                    android:gravity="center_horizontal"
+                    android:text="待发配送"
+                    android:textColor="@color/order_text_selector"
+                    android:textSize="13sp" />
+
+                <RadioButton
+                    android:id="@+id/rdb_pending_reminder"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@null"
+                    android:drawablePadding="@dimen/dimen_8dp"
+                    android:drawableTop="@drawable/pending_reminder_selector"
+                    android:gravity="center_horizontal"
+                    android:text="催单"
+                    android:textColor="@color/order_text_selector"
+                    android:textSize="13sp" />
+
+                <RadioButton
+                    android:id="@+id/rdb_pending_refund"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@null"
+                    android:drawablePadding="@dimen/dimen_8dp"
+                    android:drawableTop="@drawable/pending_refund_selector"
+                    android:gravity="center_horizontal"
+                    android:text="退款"
+                    android:textColor="@color/order_text_selector"
+                    android:textSize="13sp" />
+            </RadioGroup>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.xinzuokeji.boxtakeawaybusiness.util.listviewshangxia.XListView
+            android:id="@+id/xlv_order"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="@dimen/dimen_14dp"
+            android:divider="@color/background_new"
+            android:dividerHeight="@dimen/dimen_12dp"
+            android:scrollbars="none" />
+
+        <LinearLayout
+            android:id="@+id/ll_order_no"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <ImageView
+                android:id="@+id/img_order_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dimen_15dp"
+                android:layout_marginTop="74dp"
+                android:background="@mipmap/pending_new_order" />
+
+        </LinearLayout>
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="@dimen/dimen_6dp"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tv_news_flash"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="17dp"
+            android:layout_marginLeft="22dp"
+            android:layout_marginTop="17dp"
+            android:drawableLeft="@mipmap/shengyin"
+            android:drawablePadding="@dimen/dimen_12dp"
+            android:text="快讯：东亚哈哈给isdhgsdig" />
+    </LinearLayout>
+</LinearLayout>

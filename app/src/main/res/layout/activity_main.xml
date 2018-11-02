@@ -1,0 +1,109 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/vp_main_viewPager"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_0.5dp"
+                android:background="#E6E6E6" />
+
+            <RadioGroup
+                android:id="@+id/rdg_main_vp"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rdb_main_communication"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:button="@null"
+                    android:drawableTop="@drawable/pending_selector"
+                    android:gravity="center"
+                    android:paddingTop="@dimen/dimen_4dp"
+                    android:text="待处理"
+                    android:textColor="#666666"
+                    android:textSize="@dimen/font_size_12sp" />
+
+                <RadioButton
+                    android:id="@+id/rdb_main_record"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:button="@null"
+                    android:drawableTop="@drawable/order_selector"
+
+                    android:gravity="center"
+                    android:paddingTop="@dimen/dimen_4dp"
+                    android:text="订单管理"
+                    android:textColor="#666666"
+                    android:textSize="@dimen/font_size_12sp" />
+
+                <RadioButton
+                    android:id="@+id/rdb_main_services"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:button="@null"
+                    android:drawableTop="@drawable/store_selector"
+                    android:gravity="center"
+                    android:paddingTop="@dimen/dimen_4dp"
+                    android:text="门店运营"
+                    android:textColor="#666666"
+                    android:textSize="@dimen/font_size_12sp" />
+
+                <RadioButton
+                    android:id="@+id/rdb_main_me"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:button="@null"
+                    android:drawableTop="@drawable/me_selector"
+                    android:gravity="center"
+                    android:paddingTop="@dimen/dimen_4dp"
+                    android:text="我的"
+                    android:textColor="#666666"
+                    android:textSize="@dimen/font_size_12sp" />
+
+            </RadioGroup>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_quanxian"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="@dimen/dimen_32dp"
+            android:gravity="center"
+            android:padding="@dimen/dimen_16dp"
+            android:text="请求开启悬浮窗权限"
+            android:visibility="gone" />
+    </RelativeLayout>
+</LinearLayout>

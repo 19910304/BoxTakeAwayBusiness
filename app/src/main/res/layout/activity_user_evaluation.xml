@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_action_header"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/red"
+        android:orientation="horizontal">
+
+
+        <LinearLayout
+            android:id="@+id/ll_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:minWidth="56dp"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/dimen_14dp">
+
+            <ImageButton
+                android:id="@+id/header_backnew"
+                android:layout_width="@dimen/dimen_12dp"
+                android:layout_height="22dp"
+                android:layout_gravity="center"
+                android:background="@mipmap/back_white"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/tv_save"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="返回"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_size_15sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dimen_16dp"
+            android:layout_marginRight="@dimen/dimen_16dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/dimen_14dp">
+
+            <RadioGroup
+                android:id="@+id/rdg_pinjia"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_32dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rdb_all_pinjia"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/user_evaluation_selector1"
+                    android:button="@null"
+                    android:checked="true"
+                    android:gravity="center"
+                    android:text="全部"
+                    android:textColor="@color/user_evalution_text_selector"
+                    android:textSize="@dimen/font_size_15sp" />
+                <!---->
+                <RadioButton
+                    android:id="@+id/rdb_chapin"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/user_evaluation_selector_bad"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:lines="1"
+                    android:text="差评"
+                    android:textColor="@color/user_evalution_text_selector"
+                    android:textSize="@dimen/font_size_15sp" />
+
+                <RadioButton
+                    android:id="@+id/rdb_haoping"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/user_evaluation_selector"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="好评"
+                    android:lines="1"
+                    android:textColor="@color/user_evalution_text_selector"
+                    android:textSize="@dimen/font_size_15sp" />
+
+            </RadioGroup>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:minWidth="56dp"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/header_edit1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:visibility="gone" />
+
+            <ImageButton
+                android:id="@+id/header_edit"
+                android:layout_width="56dp"
+                android:layout_height="match_parent"
+                android:background="@null"
+
+                android:visibility="gone" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <com.xinzuokeji.boxtakeawaybusiness.util.listviewshangxia.XListView
+        android:id="@+id/lv_pingjia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+</LinearLayout>

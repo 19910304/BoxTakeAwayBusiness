@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_new"
+    android:orientation="vertical">
+
+    <include layout="@layout/action_header"></include>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="40dp"
+        android:text="手机号注册"
+        android:textColor="@color/black_text"
+        android:textSize="24sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/et_phone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="@dimen/dimen_36dp"
+            android:layout_marginTop="30dp"
+            android:layout_weight="1"
+            android:background="@drawable/register_et_selector"
+            android:hint="输入手机号码"
+            android:inputType="phone"
+            android:textColor="#999999"
+            android:textSize="@dimen/font_size_18sp" />
+
+        <Button
+            android:id="@+id/bt_delete"
+            android:layout_width="12dp"
+            android:layout_height="@dimen/dimen_12dp"
+            android:layout_marginRight="@dimen/dimen_36dp"
+            android:layout_marginTop="30dp"
+            android:background="@mipmap/delete_new"
+            android:visibility="gone" />
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="@dimen/dimen_36dp"
+        android:layout_marginTop="9dp"
+        android:background="#666666" />
+
+    <Button
+        android:id="@+id/bt_next_step"
+        android:layout_width="match_parent"
+        android:layout_height="41dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="@dimen/dimen_48dp"
+        android:background="@drawable/set_up_shop_selector"
+        android:text="下一步"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/tv_account_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="@dimen/dimen_16dp"
+        android:clickable="true"
+        android:text="已有账号，去登录"
+        android:textColor="#999999"
+        android:textSize="@dimen/font_size_12sp" />
+</LinearLayout>

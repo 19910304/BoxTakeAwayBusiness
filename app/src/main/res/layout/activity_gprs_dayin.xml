@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_new"
+    android:orientation="vertical">
+
+    <include layout="@layout/action_header"></include>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dimen_20dp"
+            android:text="什么是GPRS打印机"
+            android:textColor="#333333"
+            android:textSize="@dimen/font_size_18sp" />
+
+        <TextView
+            android:id="@+id/tv_gprs_presentation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="@dimen/dimen_20dp"
+            android:gravity="center"
+            android:scrollbars="vertical"
+            android:singleLine="false"
+            android:text="什么是GPRS无线打印机？有什么用途？简单的来说就是指借用SIM流量卡与互联网连接的打印机，用户通过流量卡连接网络实现无线远程遥控打印，哪怕是打印机放在其他城市甚至是国外，GPRS打印机被广泛应用于外卖餐饮行业，客人下单后轻轻一点“确认”，那台安装在店家后厨的打印机就立即“嘟嘟”的打出订餐信息。 什么是GPRS无线打印机？有什么用途？简单的来说就是指借用SIM流量卡与互联网连接的打印机，用户通过流量卡连接网络实现无线远程遥控打印，哪怕是打印机放在其他城市甚至是国外，GPRS打印机被广泛应用于外卖餐饮行业，客人下单后轻轻一点“确认”，那台安装在店家后厨的打印机就立即“嘟嘟”的打出订餐信息。 什么是GPRS无线打印机？有什么用途？简单的来说就是指借用SIM流量卡与互联网连接的打印机，用户通过流量卡连接网络实现无线远程遥控打印，哪怕是打印机放在其他城市甚至是国外，GPRS打印机被广泛应用于外卖餐饮行业，客人下单后轻轻一点“确认”，那台安装在店家后厨的打印机就立即“嘟嘟”的打出订餐信息。"
+            android:textColor="#666666"
+            android:textSize="@dimen/font_size_14sp" />
+
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/bu_saoma_lianjie"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="#FA6161"
+            android:text="扫码连接"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_size_16sp" />
+    </LinearLayout>
+
+</LinearLayout>

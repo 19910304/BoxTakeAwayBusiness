@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <shape>
+            <solid android:color="@color/white"></solid>
+            <corners android:bottomLeftRadius="@dimen/dimen_16dp" android:bottomRightRadius="@dimen/dimen_16dp" android:topLeftRadius="@dimen/dimen_16dp" android:topRightRadius="@dimen/dimen_16dp"></corners>
+
+            <!-- 描边 -->
+            <stroke android:width="1dp" android:color="#DBDBDB" android:dashWidth="1dp" />
+        </shape>
+    </item>
+    <item android:state_checked="false">
+        <shape>
+            <solid android:color="@color/white"></solid>
+            <corners android:bottomLeftRadius="@dimen/dimen_16dp" android:bottomRightRadius="@dimen/dimen_16dp" android:topLeftRadius="@dimen/dimen_16dp" android:topRightRadius="@dimen/dimen_16dp"></corners>
+
+            <stroke android:width="1dp" android:color="#DBDBDB" android:dashWidth="1dp" />
+        </shape>
+    </item>
+    <item android:state_checked="true">
+        <shape>
+            <solid android:color="@color/white"></solid>
+            <corners android:bottomLeftRadius="@dimen/dimen_16dp" android:bottomRightRadius="@dimen/dimen_16dp" android:topLeftRadius="@dimen/dimen_16dp" android:topRightRadius="@dimen/dimen_16dp"></corners>
+
+            <stroke android:width="1dp" android:color="#DBDBDB" android:dashWidth="1dp" />
+        </shape>
+    </item>
+</selector>

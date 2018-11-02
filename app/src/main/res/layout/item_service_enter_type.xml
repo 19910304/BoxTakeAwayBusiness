@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_problem_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background_new"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/dimen_8dp"
+        android:paddingTop="@dimen/dimen_20dp">
+
+        <TextView
+            android:id="@+id/tv_service_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text=""
+            android:textColor="#666666"
+            android:textSize="@dimen/font_size_16sp" />
+    </LinearLayout>
+
+
+    <ListView
+        android:id="@+id/lv_service_problem"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>

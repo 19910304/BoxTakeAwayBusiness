@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_new"
+    android:orientation="vertical">
+
+    <include layout="@layout/action_header"></include>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dimen_8dp"
+        android:layout_marginTop="@dimen/dimen_20dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="时间段同营业时间"
+            android:textColor="#666666"
+            android:textSize="@dimen/font_size_12sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_yu_order_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="18dp"
+            android:layout_marginLeft="11dp"
+            android:layout_marginTop="15dp"
+            android:layout_weight="1"
+            android:text="商户可接受预订日期"
+            android:textColor="#333333"
+            android:textSize="@dimen/font_size_15sp" />
+
+        <TextView
+            android:id="@+id/tv_yuding_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="18dp"
+            android:layout_marginTop="15dp"
+            android:text=""
+            android:textColor="#999999"
+            android:textSize="@dimen/font_size_12sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="16dp"
+            android:layout_marginRight="11dp"
+            android:layout_marginTop="16dp"
+            android:background="@mipmap/qqwww" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_stop_yu_order"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_20dp"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="18dp"
+            android:layout_marginLeft="11dp"
+            android:layout_marginTop="15dp"
+            android:layout_weight="1"
+            android:text="停止营业时接受预订单"
+            android:textColor="#333333"
+            android:textSize="@dimen/font_size_15sp" />
+
+
+        <Switch
+            android:id="@+id/sw_stop_yu_order"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="16dp"
+            android:layout_marginRight="11dp"
+            android:layout_marginTop="16dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_yu_order_warn_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_20dp"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="18dp"
+            android:layout_marginLeft="11dp"
+            android:layout_marginTop="15dp"
+            android:layout_weight="1"
+            android:text="预订单提醒时间"
+            android:textColor="#333333"
+            android:textSize="@dimen/font_size_15sp" />
+
+        <TextView
+            android:id="@+id/tv_yuding_warn_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="18dp"
+            android:layout_marginTop="15dp"
+            android:text=""
+            android:textColor="#999999"
+            android:textSize="@dimen/font_size_12sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="16dp"
+            android:layout_marginRight="11dp"
+            android:layout_marginTop="16dp"
+            android:background="@mipmap/qqwww" />
+    </LinearLayout>
+</LinearLayout>

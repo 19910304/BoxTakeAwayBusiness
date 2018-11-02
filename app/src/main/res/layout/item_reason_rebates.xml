@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/img_reason_rebates"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dimen_16dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="@dimen/dimen_20dp"
+        android:background="@mipmap/rebate_unselected" />
+
+    <TextView
+        android:id="@+id/tv_reason_rebates"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dimen_16dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="@dimen/dimen_20dp"
+        android:text="店铺太忙了！！！"
+        android:textColor="@color/black_text"
+        android:textSize="@dimen/font_size_15sp" />
+</LinearLayout>

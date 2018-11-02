@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_new"
+    android:orientation="vertical">
+
+    <include layout="@layout/action_header"></include>
+
+    <LinearLayout
+        android:id="@+id/ll_reset_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="30dp"
+                android:background="@mipmap/mima" />
+
+            <EditText
+                android:id="@+id/et_password_new"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="@dimen/dimen_36dp"
+                android:layout_marginTop="30dp"
+                android:layout_weight="1"
+                android:background="@drawable/register_et_selector"
+                android:hint="请输入新密码"
+                android:textColor="#999999"
+                android:textColorHint="#ababab"
+                android:textSize="@dimen/font_size_16sp" />
+
+            <Button
+                android:id="@+id/bt_delete_pw_new"
+                android:layout_width="12dp"
+                android:layout_height="@dimen/dimen_12dp"
+                android:layout_marginRight="@dimen/dimen_36dp"
+                android:layout_marginTop="30dp"
+                android:background="@mipmap/dele"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="@dimen/dimen_36dp"
+            android:layout_marginTop="9dp"
+            android:background="#e1e1e1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="30dp"
+                android:background="@mipmap/mima" />
+
+            <EditText
+                android:id="@+id/et_password_sec"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="@dimen/dimen_36dp"
+                android:layout_marginTop="30dp"
+                android:layout_weight="1"
+                android:background="@drawable/register_et_selector"
+                android:hint="请再次输入密码"
+                android:textColor="@color/black_text"
+                android:textColorHint="#ababab"
+                android:textSize="@dimen/font_size_16sp" />
+
+            <Button
+                android:id="@+id/bt_delete_pw_sec"
+                android:layout_width="12dp"
+                android:layout_height="@dimen/dimen_12dp"
+                android:layout_marginRight="@dimen/dimen_36dp"
+                android:layout_marginTop="30dp"
+                android:background="@mipmap/dele"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="@dimen/dimen_36dp"
+            android:layout_marginTop="9dp"
+            android:background="#e1e1e1" />
+
+        <Button
+            android:id="@+id/btn_reset_confirm"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="@dimen/dimen_48dp"
+            android:background="@drawable/set_up_shop_selector"
+            android:text="下一步"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+</LinearLayout>
