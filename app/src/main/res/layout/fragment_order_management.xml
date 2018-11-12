@@ -248,7 +248,7 @@
         </LinearLayout>
     </LinearLayout>
 
-    <com.xinzuokeji.boxtakeawaybusiness.util.listviewshangxia.XListView
+    <com.xinzuo.qiaobashangjia.util.listviewshangxia.XListView
         android:id="@+id/xlv_order"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

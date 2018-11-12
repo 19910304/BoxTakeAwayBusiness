@@ -89,8 +89,8 @@
                     android:background="@drawable/user_evaluation_selector"
                     android:button="@null"
                     android:gravity="center"
-                    android:text="好评"
                     android:lines="1"
+                    android:text="好评"
                     android:textColor="@color/user_evalution_text_selector"
                     android:textSize="@dimen/font_size_15sp" />
 
@@ -122,10 +122,11 @@
 
     </LinearLayout>
 
-    <com.xinzuokeji.boxtakeawaybusiness.util.listviewshangxia.XListView
+    <com.xinzuo.qiaobashangjia.util.listviewshangxia.XListView
         android:id="@+id/lv_pingjia"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="match_parent"
+        android:background="@color/white" />
 
 
 </LinearLayout>

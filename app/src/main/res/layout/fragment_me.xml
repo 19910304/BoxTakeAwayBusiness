@@ -109,18 +109,7 @@
                             android:textSize="@dimen/font_size_14sp" />
                     </LinearLayout>
 
-                    <TextView
-                        android:id="@+id/tv_name"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginLeft="@dimen/dimen_48dp"
-                        android:gravity="center_horizontal"
-                        android:text="LiShuTing"
-                        android:clickable="true"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/font_size_14sp"
-                        android:visibility="gone" />
+
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -303,7 +292,7 @@
                     android:orientation="horizontal"
                     android:visibility="gone">
 
-                    <com.xinzuokeji.boxtakeawaybusiness.util.CustomDigitalClock
+                    <com.xinzuo.qiaobashangjia.util.CustomDigitalClock
                         android:id="@+id/remainTime"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"

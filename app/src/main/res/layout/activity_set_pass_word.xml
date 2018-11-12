@@ -35,7 +35,7 @@
                 android:layout_weight="1"
                 android:background="@drawable/register_et_selector"
                 android:hint="请输入新密码"
-                android:textColor="#999999"
+                android:textColor="@color/black_text"
                 android:textColorHint="#ababab"
                 android:textSize="@dimen/font_size_16sp" />
 

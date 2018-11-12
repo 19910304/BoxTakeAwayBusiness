@@ -421,7 +421,7 @@
 
             <!--android:background="@mipmap/store_main" />-->
 
-            <com.xinzuokeji.convenientbanner.ConvenientBanner
+            <com.xinzuo.convenientbanner.ConvenientBanner
                 android:id="@+id/convenientBanner"
                 android:layout_width="match_parent"
                 android:layout_height="140dp"

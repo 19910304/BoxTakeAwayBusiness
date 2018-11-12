@@ -3,7 +3,7 @@
     android:id="@+id/lLayout_bg"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/white"
+    android:background="@drawable/shap_xiaxian"
     android:orientation="vertical">
 
     <TextView
@@ -13,9 +13,9 @@
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:layout_marginTop="15dp"
+        android:background="@color/white"
         android:gravity="center"
         android:text="title"
-        android:background="@color/white"
         android:textSize="18sp"
         android:textStyle="bold" />
 
@@ -26,9 +26,9 @@
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:layout_marginTop="32dp"
+        android:background="@color/white"
         android:gravity="center"
         android:text="内容"
-        android:background="@color/white"
         android:textSize="16sp" />
 
     <ImageView
@@ -40,6 +40,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dimen_12dp"
+        android:layout_marginRight="@dimen/dimen_12dp"
         android:orientation="horizontal">
 
         <Button

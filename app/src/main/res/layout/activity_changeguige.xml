@@ -37,9 +37,9 @@
             android:layout_marginTop="15dp"
             android:layout_weight="1"
             android:background="@drawable/white_et_selector"
-            android:hint="请输入规格，如大份、小份、微辣、中辣"
+            android:hint="请输入规格，如大份、小份"
             android:paddingLeft="@dimen/dimen_32dp"
-            android:textColor="#999999"
+            android:textColor="@color/black_text"
             android:textSize="@dimen/font_size_14sp" />
     </LinearLayout>
 
@@ -89,7 +89,7 @@
             android:hint="输入价格"
             android:inputType="numberDecimal"
             android:paddingLeft="@dimen/dimen_32dp"
-            android:textColor="#999999"
+            android:textColor="@color/black_text"
             android:textSize="@dimen/font_size_14sp" />
     </LinearLayout>
 
@@ -139,7 +139,7 @@
             android:hint="请输入库存"
             android:inputType="number"
             android:paddingLeft="@dimen/dimen_32dp"
-            android:textColor="#999999"
+            android:textColor="@color/black_text"
             android:textSize="@dimen/font_size_14sp" />
     </LinearLayout>
 
@@ -188,7 +188,7 @@
             android:hint="输入价格"
             android:inputType="numberDecimal"
             android:paddingLeft="@dimen/dimen_32dp"
-            android:textColor="#999999"
+            android:textColor="@color/black_text"
             android:textSize="@dimen/font_size_14sp" />
     </LinearLayout>
 
@@ -244,7 +244,8 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:visibility="gone">
 
         <TextView
             android:layout_width="wrap_content"
@@ -261,7 +262,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/white"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:visibility="gone">
 
         <TextView
             android:layout_width="wrap_content"
@@ -295,7 +297,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/white"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:visibility="gone">
 
         <TextView
             android:layout_width="wrap_content"
@@ -330,7 +333,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/white"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:visibility="gone">
 
         <TextView
             android:layout_width="wrap_content"
@@ -338,7 +342,6 @@
             android:layout_marginBottom="18dp"
             android:layout_marginLeft="11dp"
             android:layout_marginTop="15dp"
-
             android:text=" 位置码"
             android:textColor="#333333"
             android:textSize="@dimen/font_size_15sp" />

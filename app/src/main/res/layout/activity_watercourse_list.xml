@@ -7,7 +7,7 @@
 
     <include layout="@layout/action_header"></include>
 
-    <com.xinzuokeji.boxtakeawaybusiness.util.listviewshangxia.XListView
+    <com.xinzuo.qiaobashangjia.util.listviewshangxia.XListView
         android:id="@+id/xlv_watercourse"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

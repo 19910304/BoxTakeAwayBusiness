@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/action_header_new"></include>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dimen_6dp"
+        android:layout_marginTop="@dimen/dimen_12dp"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dimen_12dp"
+            android:layout_marginTop="@dimen/dimen_12dp"
+            android:text="属性名称："
+            android:textColor="@color/black_text"
+            android:textSize="@dimen/font_size_14sp" />
+
+        <EditText
+            android:id="@+id/et_taste_title"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_36dp"
+            android:layout_marginBottom="@dimen/dimen_12dp"
+            android:layout_marginRight="@dimen/dimen_12dp"
+            android:layout_marginTop="@dimen/dimen_12dp"
+            android:background="@drawable/white_et_selector"
+            android:hint="@string/et_tips"
+            android:maxLength="4"
+            android:paddingLeft="@dimen/dimen_8dp"
+            android:textColor="@color/black_text"
+            android:textColorHint="@color/gray_text"
+            android:textSize="@dimen/font_size_14sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dimen_12dp"
+        android:layout_marginTop="@dimen/dimen_6dp"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/dimen_12dp"
+        android:paddingTop="@dimen/dimen_12dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="分类1："
+                android:textColor="@color/black_text"
+                android:textSize="@dimen/font_size_14sp" />
+
+            <EditText
+                android:id="@+id/et_taste_content1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_36dp"
+                android:layout_marginRight="@dimen/dimen_12dp"
+                android:background="@drawable/white_et_selector"
+                android:hint="@string/et_tips"
+                android:maxLength="4"
+                android:paddingLeft="@dimen/dimen_8dp"
+                android:textColor="@color/black_text"
+                android:textColorHint="@color/gray_text"
+                android:textSize="@dimen/font_size_14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="分类2："
+                android:textColor="@color/black_text"
+                android:textSize="@dimen/font_size_14sp" />
+
+            <EditText
+                android:id="@+id/et_taste_content2"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_36dp"
+                android:layout_marginRight="@dimen/dimen_12dp"
+                android:background="@drawable/white_et_selector"
+                android:hint="@string/et_tips"
+                android:maxLength="4"
+                android:paddingLeft="@dimen/dimen_8dp"
+                android:textColor="@color/black_text"
+                android:textColorHint="@color/gray_text"
+                android:textSize="@dimen/font_size_14sp" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dimen_12dp"
+        android:layout_marginTop="1dp"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/dimen_12dp"
+        android:paddingTop="@dimen/dimen_12dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="分类3："
+                android:textColor="@color/black_text"
+                android:textSize="@dimen/font_size_14sp" />
+
+            <EditText
+                android:id="@+id/et_taste_content3"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_36dp"
+                android:layout_marginRight="@dimen/dimen_12dp"
+                android:background="@drawable/white_et_selector"
+                android:hint="@string/et_tips"
+                android:maxLength="4"
+                android:paddingLeft="@dimen/dimen_8dp"
+                android:textColor="@color/black_text"
+                android:textColorHint="@color/gray_text"
+                android:textSize="@dimen/font_size_14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="分类4："
+                android:textColor="@color/black_text"
+                android:textSize="@dimen/font_size_14sp" />
+
+            <EditText
+                android:id="@+id/et_taste_content4"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_36dp"
+                android:layout_marginRight="@dimen/dimen_12dp"
+                android:background="@drawable/white_et_selector"
+                android:hint="@string/et_tips"
+                android:maxLength="4"
+                android:paddingLeft="@dimen/dimen_8dp"
+                android:textColor="@color/black_text"
+                android:textColorHint="@color/gray_text"
+                android:textSize="@dimen/font_size_14sp" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dimen_12dp"
+        android:layout_marginTop="1dp"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/dimen_12dp"
+        android:paddingTop="@dimen/dimen_12dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="分类5："
+                android:textColor="@color/black_text"
+                android:textSize="@dimen/font_size_14sp" />
+
+            <EditText
+                android:id="@+id/et_taste_content5"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_36dp"
+                android:layout_marginRight="@dimen/dimen_12dp"
+                android:background="@drawable/white_et_selector"
+                android:hint="@string/et_tips"
+                android:maxLength="4"
+                android:paddingLeft="@dimen/dimen_8dp"
+                android:textColor="@color/black_text"
+                android:textColorHint="@color/gray_text"
+                android:textSize="@dimen/font_size_14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="分类6："
+                android:textColor="@color/black_text"
+                android:textSize="@dimen/font_size_14sp" />
+
+            <EditText
+                android:id="@+id/et_taste_content6"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_36dp"
+                android:layout_marginRight="@dimen/dimen_12dp"
+                android:background="@drawable/white_et_selector"
+                android:hint="@string/et_tips"
+                android:maxLength="4"
+                android:paddingLeft="@dimen/dimen_8dp"
+                android:textColor="@color/black_text"
+                android:textColorHint="@color/gray_text"
+                android:textSize="@dimen/font_size_14sp" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dimen_12dp"
+        android:layout_marginTop="1dp"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/dimen_12dp"
+        android:paddingTop="@dimen/dimen_12dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="分类7："
+                android:textColor="@color/black_text"
+                android:textSize="@dimen/font_size_14sp" />
+
+            <EditText
+                android:id="@+id/et_taste_content7"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_36dp"
+                android:layout_marginRight="@dimen/dimen_12dp"
+                android:background="@drawable/white_et_selector"
+                android:hint="@string/et_tips"
+                android:maxLength="4"
+                android:paddingLeft="@dimen/dimen_8dp"
+                android:textColor="@color/black_text"
+                android:textColorHint="@color/gray_text"
+                android:textSize="@dimen/font_size_14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="分类8："
+                android:textColor="@color/black_text"
+                android:textSize="@dimen/font_size_14sp" />
+
+            <EditText
+                android:id="@+id/et_taste_content8"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_36dp"
+                android:layout_marginRight="@dimen/dimen_12dp"
+                android:background="@drawable/white_et_selector"
+                android:hint="@string/et_tips"
+                android:maxLength="4"
+                android:paddingLeft="@dimen/dimen_8dp"
+                android:textColor="@color/black_text"
+                android:textColorHint="@color/gray_text"
+                android:textSize="@dimen/font_size_14sp" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <GridView
+        android:id="@+id/gv_taste"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:numColumns="2"
+        android:visibility="gone" />
+</LinearLayout>

@@ -16,7 +16,7 @@
         android:layout_marginTop="25dp"
         android:text="@string/xlistview_footer_hint_normal"/>
 
-    <com.xinzuokeji.boxtakeawaybusiness.util.MyGridView
+    <com.xinzuo.qiaobashangjia.util.MyGridView
         android:id="@+id/gv_manage_type"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

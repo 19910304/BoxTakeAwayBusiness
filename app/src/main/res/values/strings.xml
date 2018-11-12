@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">禾籽外卖商家</string>
+    <string name="app_name">俏巴商家</string>
     <string name="xlistview_header_hint_normal">下拉刷新</string>
     <string name="xlistview_header_hint_ready">松开刷新数据</string>
     <string name="xlistview_header_hint_loading">正在加载&#8230;</string>
@@ -28,4 +28,5 @@
     <string name="soft_update_later">下次更新</string>
     <string name="soft_updating">版本更新中</string>
     <string name="soft_update_cancel">取消更新</string>
+    <string name="et_tips">请输入</string>
 </resources>

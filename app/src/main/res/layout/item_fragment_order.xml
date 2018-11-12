@@ -194,16 +194,19 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/dimen_15dp"
             android:layout_weight="1"
-            android:text="用户申请退款"
+            android:paddingBottom="@dimen/dimen_12dp"
+            android:text=""
             android:textColor="@color/black_text" />
 
         <TextView
             android:id="@+id/tv_greed_status"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginRight="@dimen/dimen_15dp"
+            android:layout_weight="1"
+            android:gravity="end"
             android:paddingBottom="@dimen/dimen_12dp"
-            android:text="已同意" />
+            android:text="" />
     </LinearLayout>
 
     <LinearLayout
@@ -262,12 +265,12 @@
         android:dividerHeight="@dimen/dimen_0.5dp"
         android:scrollbars="none"
         android:visibility="gone" />
-
+    <!--aa-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:visibility="visible">
 
         <LinearLayout
             android:layout_width="0dp"
@@ -651,7 +654,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/font_size_30sp"
                 android:layout_marginTop="9dp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:visibility="gone">
 
                 <TextView
                     android:layout_width="wrap_content"

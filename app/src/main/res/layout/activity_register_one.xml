@@ -32,7 +32,7 @@
             android:background="@drawable/register_et_selector"
             android:hint="输入手机号码"
             android:inputType="phone"
-            android:textColor="#999999"
+            android:textColor="@color/black_text"
             android:textSize="@dimen/font_size_18sp" />
 
         <Button

@@ -88,7 +88,7 @@
                     android:background="@drawable/white_et_selector"
                     android:gravity="end"
                     android:hint=""
-                    android:textColor="#999999"
+                    android:textColor="@color/black_text"
                     android:textSize="@dimen/font_size_14sp" />
             </LinearLayout>
 
@@ -137,7 +137,7 @@
                     android:gravity="end"
                     android:hint=""
                     android:inputType="numberDecimal"
-                    android:textColor="#999999"
+                    android:textColor="@color/black_text"
                     android:textSize="@dimen/font_size_14sp" />
             </LinearLayout>
 
@@ -181,7 +181,7 @@
                     android:clickable="true"
                     android:gravity="center"
                     android:text="开始"
-                    android:textColor="#999999"
+                    android:textColor="@color/black_text"
                     android:textSize="@dimen/font_size_14sp" />
 
                 <TextView
@@ -202,7 +202,7 @@
                     android:clickable="true"
                     android:gravity="center"
                     android:text="结束"
-                    android:textColor="#999999"
+                    android:textColor="@color/black_text"
                     android:textSize="@dimen/font_size_14sp" />
 
 
@@ -273,33 +273,6 @@
                     android:background="#EBEBEB" />
             </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/ll_change_guige"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="15dp"
-                    android:layout_marginLeft="11dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_weight="1"
-                    android:text="选择/修改规格"
-                    android:textColor="#333333"
-                    android:textSize="@dimen/font_size_15sp" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginBottom="15dp"
-                    android:layout_marginRight="11dp"
-                    android:layout_marginTop="15dp"
-                    android:background="@mipmap/qqwww" />
-            </LinearLayout>
 
             <LinearLayout
 
@@ -332,7 +305,7 @@
                     android:background="@drawable/white_et_selector"
                     android:gravity="end"
                     android:hint="如:招牌,最多可输入2字,可不填"
-                    android:textColor="#999999"
+                    android:textColor="@color/black_text"
                     android:textSize="@dimen/font_size_14sp" />
             </LinearLayout>
 
@@ -381,7 +354,7 @@
                     android:background="@drawable/white_et_selector"
                     android:gravity="end"
                     android:hint="如:招牌,最多可输入2字,可不填"
-                    android:textColor="#999999"
+                    android:textColor="@color/black_text"
                     android:textSize="@dimen/font_size_14sp" />
             </LinearLayout>
 
@@ -430,7 +403,7 @@
                     android:background="@drawable/white_et_selector"
                     android:gravity="end"
                     android:hint="如:招牌,最多可输入2字,可不填"
-                    android:textColor="#999999"
+                    android:textColor="@color/black_text"
                     android:textSize="@dimen/font_size_14sp" />
             </LinearLayout>
 
@@ -515,7 +488,7 @@
                     android:gravity="end"
                     android:hint="请输入餐盒价格"
                     android:inputType="numberDecimal"
-                    android:textColor="#999999"
+                    android:textColor="@color/black_text"
                     android:textSize="@dimen/font_size_14sp" />
             </LinearLayout>
             <!--描述信息-->
@@ -564,8 +537,77 @@
                     android:gravity="left|top"
                     android:hint=""
                     android:lines="4"
-                    android:textColor="#999999"
+                    android:textColor="@color/black_text"
                     android:textSize="@dimen/font_size_14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_change_guige"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginLeft="11dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_weight="1"
+                    android:text="选择/修改规格"
+                    android:textColor="#333333"
+                    android:textSize="@dimen/font_size_15sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginRight="11dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@mipmap/qqwww" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_0.5dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="#EBEBEB" />
+            </LinearLayout>
+            <!--修改口味-->
+            <LinearLayout
+                android:id="@+id/ll_change_taste"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginLeft="11dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_weight="1"
+                    android:text="选择/修改口味"
+                    android:textColor="#333333"
+                    android:textSize="@dimen/font_size_15sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginRight="11dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@mipmap/qqwww" />
             </LinearLayout>
 
             <LinearLayout
@@ -601,7 +643,7 @@
                     android:background="@drawable/white_et_selector"
                     android:gravity="end"
                     android:hint="100"
-                    android:textColor="#999999" />
+                    android:textColor="@color/black_text" />
             </LinearLayout>
 
             <LinearLayout
