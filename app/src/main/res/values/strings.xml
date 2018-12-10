@@ -1,5 +1,8 @@
 <resources>
-    <string name="app_name">俏巴商家</string>
+    <string name="app_name">禾籽商家</string>
+    <string name="app_name_festival">禾籽商家</string>
+    <string name="agreement_name">《禾籽外卖商家入驻协议》</string>
+    <string name="setting_message">请在手机【设置】>【通知】中找到禾籽商家，开启消息通知</string>
     <string name="xlistview_header_hint_normal">下拉刷新</string>
     <string name="xlistview_header_hint_ready">松开刷新数据</string>
     <string name="xlistview_header_hint_loading">正在加载&#8230;</string>
@@ -20,7 +23,9 @@
     <string name="confirm">确定</string>
     <string name="cancel">取消</string>
     <string name="call_jingli">联系业务经理</string>
-    <string name="network_error">网络异常</string>
+    <string name="network_error">服务器异常</string>
+    <string name="net_work_error">请检查网络连接</string>
+    <string name="up_picture_error">上传图片失败</string>
     <!--应用版本更新-->
     <string name="soft_update_title">应用更新至:</string>
     <string name="soft_update_info">更新信息</string>

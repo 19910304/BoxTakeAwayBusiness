@@ -27,7 +27,7 @@
     resources>
     <color name="holo_purple">#ffaa66cc</color>
     <color name="blue">#bf61fa</color>
-
+    <color name="blue_light">#bf61fa</color>
     <color name="orange">#ff6c00</color>
     <color name="holo_purple2">#FF5F5F</color>
 </resources>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:zhy="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
@@ -9,16 +10,25 @@
         android:id="@+id/tv_shop_type"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="@dimen/font_size_14sp"
-        android:textColor="@color/black_text"
-        android:layout_marginLeft="@dimen/dimen_16dp"
         android:layout_marginBottom="@dimen/dimen_12dp"
+        android:layout_marginLeft="@dimen/dimen_16dp"
         android:layout_marginTop="25dp"
-        android:text="@string/xlistview_footer_hint_normal"/>
+        android:text="@string/xlistview_footer_hint_normal"
+        android:textColor="@color/black_text"
+        android:textSize="@dimen/font_size_14sp" />
 
-    <com.xinzuo.qiaobashangjia.util.MyGridView
+    <com.xinzuokeji.boxtakeawaybusiness.util.MyGridView
         android:id="@+id/gv_manage_type"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:numColumns="3" />
+        android:numColumns="3"
+        android:visibility="visible" />
+<!--暂时不用-->
+    <com.zhy.view.flowlayout.TagFlowLayout
+        android:id="@+id/id_flowlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="17px"
+        zhy:max_select="1"
+        android:visibility="gone"/>
 </LinearLayout>

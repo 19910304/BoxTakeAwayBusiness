@@ -10,7 +10,6 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/Libzxing" />
-            <option value="$PROJECT_DIR$/androids" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/canrefresh" />
             <option value="$PROJECT_DIR$/convenientbanner" />

@@ -1,1 +1,1 @@
-include ':app', ':convenientbanner', ':canrefresh', ':androids', ':picture_library', ':ucrop', ':oss-android-sdk', ':Libzxing'
+include ':app', ':convenientbanner', ':canrefresh', ':picture_library', ':ucrop', ':oss-android-sdk', ':Libzxing'

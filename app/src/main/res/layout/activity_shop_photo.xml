@@ -16,14 +16,14 @@
             android:orientation="vertical">
 
 
-            <com.xinzuo.qiaobashangjia.util.MyGridView
+            <com.xinzuokeji.boxtakeawaybusiness.util.MyGridView
                 android:id="@+id/gv_shop_photo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:numColumns="2"
                 android:visibility="visible">
 
-            </com.xinzuo.qiaobashangjia.util.MyGridView>
+            </com.xinzuokeji.boxtakeawaybusiness.util.MyGridView>
 
             <Button
                 android:id="@+id/bt_delete_photo"

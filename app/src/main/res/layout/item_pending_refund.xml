@@ -37,18 +37,20 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/ll_rider_infor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:visibility="gone">
 
         <ImageView
+            android:id="@+id/cimg_nick_icon"
             android:layout_width="51dp"
             android:layout_height="51dp"
             android:layout_marginBottom="@dimen/dimen_8dp"
             android:layout_marginLeft="19dp"
             android:layout_marginTop="17dp"
-            android:src="@mipmap/circleimag" />
+            android:src="@mipmap/rider_icon" />
 
         <LinearLayout
             android:layout_width="0dp"
@@ -59,11 +61,13 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/tv_nickname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="骑手望望" />
 
             <TextView
+                android:id="@+id/tv_nick_phone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dimen_8dp"
@@ -71,6 +75,7 @@
         </LinearLayout>
 
         <TextView
+            android:id="@+id/tv_nick_status"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="@dimen/dimen_14dp"
@@ -78,7 +83,7 @@
             android:background="#4C4C4C"
             android:paddingLeft="@dimen/dimen_12dp"
             android:paddingRight="@dimen/dimen_12dp"
-            android:text="配送中"
+            android:text=""
             android:textColor="@color/white" />
     </LinearLayout>
 

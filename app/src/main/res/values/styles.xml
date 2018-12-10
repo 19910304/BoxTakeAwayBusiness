@@ -6,7 +6,7 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:windowBackground">@mipmap/qiaoba_splash</item>
+        <item name="android:windowBackground">@mipmap/splash</item>
     </style>
     <!--全屏Dialog-->
     <style name="dialog_fullscreen">
@@ -14,10 +14,13 @@
         <item name="android:windowNoTitle">false</item>
         <item name="android:windowFullscreen">false</item>
         <item name="android:gravity">center|left</item>
+    </style>
 
-
+    <style name="OnePixelActivity" parent="android:Theme.Holo.Light.NoActionBar">//无标题
+        <item name="android:windowIsTranslucent">true</item>//透明
     </style>
     <!--dialog进出动画-->
+
     <style name="DialogOutAndInStyle">
         <item name="android:windowEnterAnimation">@anim/dialog_in_anim</item>
         <item name="android:windowExitAnimation">@anim/dialog_out_anim</item>

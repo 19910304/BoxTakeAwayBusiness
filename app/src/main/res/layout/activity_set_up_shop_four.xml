@@ -217,8 +217,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dimen_24dp"
-            android:text="《禾籽外卖商家入驻协议》"
+            android:text="@string/agreement_name"
             android:textColor="#FF5969" />
+        <!--《禾籽外卖商家入驻协议》-->
     </LinearLayout>
 
     <LinearLayout

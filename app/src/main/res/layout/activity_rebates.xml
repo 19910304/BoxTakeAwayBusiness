@@ -72,7 +72,7 @@
                     android:layout_gravity="end"
                     android:layout_marginBottom="25dp"
                     android:layout_marginRight="@dimen/font_size_18sp"
-                    android:text="退款金额 ￥22.58"
+                    android:text="退款金额 "
                     android:textColor="@color/black_text"
                     android:textSize="@dimen/font_size_15sp" />
 

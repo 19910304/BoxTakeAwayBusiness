@@ -122,7 +122,7 @@
 
     </LinearLayout>
 
-    <com.xinzuo.qiaobashangjia.util.listviewshangxia.XListView
+    <com.xinzuokeji.boxtakeawaybusiness.util.listviewshangxia.XListView
         android:id="@+id/lv_pingjia"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

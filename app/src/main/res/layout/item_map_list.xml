@@ -10,7 +10,6 @@
         android:background="@color/white"
         android:orientation="horizontal">
 
-
         <TextView
             android:id="@+id/map_address_name"
             android:layout_width="wrap_content"

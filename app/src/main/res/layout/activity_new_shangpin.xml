@@ -90,8 +90,7 @@
                     android:background="@drawable/white_et_selector"
                     android:gravity="end"
                     android:hint=""
-
-                    android:textColor="#999999"
+                    android:textColor="@color/black_text"
                     android:textSize="@dimen/font_size_14sp" />
             </LinearLayout>
 
@@ -140,7 +139,7 @@
                     android:gravity="end"
                     android:hint=""
                     android:inputType="numberDecimal"
-                    android:textColor="#999999"
+                    android:textColor="@color/black_text"
                     android:textSize="@dimen/font_size_14sp" />
             </LinearLayout>
 
@@ -307,7 +306,7 @@
                     android:background="@drawable/white_et_selector"
                     android:gravity="end"
                     android:hint="如:招牌,最多可输入2字,可不填"
-                    android:textColor="#999999"
+                    android:textColor="@color/black_text"
                     android:textSize="@dimen/font_size_14sp" />
             </LinearLayout>
 
@@ -356,7 +355,7 @@
                     android:background="@drawable/white_et_selector"
                     android:gravity="end"
                     android:hint="如:招牌,最多可输入2字,可不填"
-                    android:textColor="#999999"
+                    android:textColor="@color/black_text"
                     android:textSize="@dimen/font_size_14sp" />
             </LinearLayout>
 
@@ -405,7 +404,7 @@
                     android:background="@drawable/white_et_selector"
                     android:gravity="end"
                     android:hint="如:招牌,最多可输入2字,可不填"
-                    android:textColor="#999999"
+                    android:textColor="@color/black_text"
                     android:textSize="@dimen/font_size_14sp" />
             </LinearLayout>
 
@@ -490,7 +489,7 @@
                     android:gravity="end"
                     android:hint="请输入餐盒价格"
                     android:inputType="numberDecimal"
-                    android:textColor="#999999"
+                    android:textColor="@color/black_text"
                     android:textSize="@dimen/font_size_14sp" />
             </LinearLayout>
             <!--描述信息-->
@@ -539,7 +538,7 @@
                     android:gravity="left|top"
                     android:hint=""
                     android:lines="4"
-                    android:textColor="#999999"
+                    android:textColor="@color/black_text"
                     android:textSize="@dimen/font_size_14sp" />
             </LinearLayout>
 
@@ -644,7 +643,8 @@
                     android:background="@drawable/white_et_selector"
                     android:gravity="end"
                     android:hint="请输入库存数量"
-                    android:textColor="#999999"
+                    android:inputType="number"
+                    android:textColor="@color/black_text"
                     android:textSize="@dimen/font_size_14sp" />
             </LinearLayout>
 

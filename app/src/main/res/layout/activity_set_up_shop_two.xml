@@ -49,7 +49,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/dimen_20dp"
-                        android:text="*" />
+                        android:text="*"
+                        android:textColor="@color/red" />
 
                     <TextView
                         android:layout_width="100dp"
@@ -96,7 +97,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/dimen_20dp"
-                        android:text="*" />
+                        android:text="*"
+                        android:textColor="@color/red" />
 
                     <TextView
                         android:layout_width="100dp"
@@ -142,7 +144,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/dimen_20dp"
-                        android:text="*" />
+                        android:text="*"
+                        android:textColor="@color/red" />
 
                     <TextView
                         android:layout_width="100dp"
@@ -189,7 +192,8 @@
                         android:layout_marginLeft="@dimen/dimen_20dp"
                         android:paddingBottom="19dp"
                         android:paddingTop="18dp"
-                        android:text="*" />
+                        android:text="*"
+                        android:textColor="@color/red" />
 
                     <TextView
                         android:layout_width="100dp"
@@ -269,7 +273,8 @@
                         android:layout_marginLeft="@dimen/dimen_20dp"
                         android:paddingBottom="19dp"
                         android:paddingTop="18dp"
-                        android:text="*" />
+                        android:text="*"
+                        android:textColor="@color/red" />
 
                     <TextView
                         android:layout_width="100dp"
@@ -436,7 +441,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/dimen_20dp"
-                        android:text="*" />
+                        android:text="*"
+                        android:textColor="@color/red" />
 
                     <TextView
                         android:layout_width="100dp"
@@ -506,7 +512,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/dimen_20dp"
-                        android:text="*" />
+                        android:text="*"
+                        android:textColor="@color/red" />
 
                     <TextView
                         android:layout_width="100dp"
@@ -577,7 +584,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/dimen_20dp"
                         android:text="*"
-                        android:visibility="invisible" />
+                        android:textColor="@color/red"
+                        android:visibility="visible" />
 
                     <TextView
                         android:layout_width="100dp"

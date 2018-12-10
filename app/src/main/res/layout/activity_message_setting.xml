@@ -57,7 +57,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="11dp"
-        android:text="请在手机【设置】>【通知】中找到禾籽商家，开启消息通知"
+        android:text="@string/setting_message"
         android:textColor="#999999"
         android:textSize="13sp" />
 

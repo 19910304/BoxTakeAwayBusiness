@@ -51,13 +51,13 @@
 -keep class com.huawei.** {*;}
 -dontwarn com.huawei.**
 # GCM/FCM通道
--keep class com.google.firebase.**{*;}
--dontwarn com.google.firebase.**
+#-keep class com.google.firebase.**{*;}
+#-dontwarn com.google.firebase.**
 
 #3D 地图 V5.0.0之前：
--keep   class com.amap.api.maps.**{*;}
--keep   class com.autonavi.amap.mapcore.*{*;}
--keep   class com.amap.api.trace.**{*;}
+#-keep   class com.amap.api.maps.**{*;}
+#-keep   class com.autonavi.amap.mapcore.*{*;}
+#-keep   class com.amap.api.trace.**{*;}
 
 #3D 地图 V5.0.0之后：
 -keep   class com.amap.api.maps.**{*;}
@@ -73,18 +73,49 @@
 -keep   class com.amap.api.services.**{*;}
 
 #2D地图
--keep class com.amap.api.maps2d.**{*;}
--keep class com.amap.api.mapcore2d.**{*;}
+#-keep class com.amap.api.maps2d.**{*;}
+#-keep class com.amap.api.mapcore2d.**{*;}
 
 #导航
 -keep class com.amap.api.navi.**{*;}
 -keep class com.autonavi.**{*;}
 
--libraryjars libs/alipaySDK-20150602.jar
 
+-dontwarn
 -keep class com.alipay.android.app.IAlixPay{*;}
 -keep class com.alipay.android.app.IAlixPay$Stub{*;}
 -keep class com.alipay.android.app.IRemoteServiceCallback{*;}
 -keep class com.alipay.android.app.IRemoteServiceCallback$Stub{*;}
 -keep class com.alipay.sdk.app.PayTask{ public *;}
 -keep class com.alipay.sdk.app.AuthTask{ public *;}
+
+
+-keepclassmembers class fqcn.of.javascript.interface.for.webview {
+ public *;
+}
+
+#指定代码的压缩级别
+-optimizationpasses 5
+
+#包明不混合大小写
+-dontusemixedcaseclassnames
+
+#不去忽略非公共的库类
+-dontskipnonpubliclibraryclasses
+
+#优化 不优化输入的类文件
+-dontoptimize
+
+#预校验
+-dontpreverify
+
+#混淆时是否记录日志
+-verbose
+#忽略警告，避免打包时某些警告出现
+-ignorewarning
+# 混淆时所采用的算法
+-optimizations !code/simplification/arithmetic,!field/*,!class/merging/*
+##保护注解
+#-keepattributes *Annotation*
+-dontwarn com.xinzuokeji.convenientbanner.view.CBLoopViewPager.* #younghare （过滤警告信息）
+-dontwarn com.amap.api.navi.view.SlidingUpPanelLayout.*

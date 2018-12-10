@@ -41,7 +41,7 @@
                         android:textColor="@color/black_text"
                         android:textSize="18sp" />
 
-                    <com.xinzuo.qiaobashangjia.util.WaterWaveView
+                    <com.xinzuokeji.boxtakeawaybusiness.util.WaterWaveView
                         android:id="@+id/wave_view"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
@@ -122,7 +122,7 @@
                     android:text="本次问题选项" />
             </LinearLayout>
 
-            <com.xinzuo.qiaobashangjia.util.MyGridView
+            <com.xinzuokeji.boxtakeawaybusiness.util.MyGridView
                 android:id="@+id/gv_problem"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -150,7 +150,7 @@
                     android:text="暂无问题选项" />
             </LinearLayout>
 
-            <com.xinzuo.qiaobashangjia.util.MyGridView
+            <com.xinzuokeji.boxtakeawaybusiness.util.MyGridView
                 android:id="@+id/gv_no_problem"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
