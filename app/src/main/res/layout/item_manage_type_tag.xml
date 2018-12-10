@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Button xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/bt_manage_type_name"
+    android:layout_width="wrap_content"
+    android:layout_height="31dp"
+    android:layout_marginBottom="@dimen/dimen_12dp"
+    android:layout_marginLeft="@dimen/dimen_12dp"
+    android:layout_marginTop="13dp"
+    android:background="@drawable/manage_type_selector"
+    android:gravity="center"
+    android:text="鲜花"
+    android:textColor="@color/gray_dark">
+
+</Button>
