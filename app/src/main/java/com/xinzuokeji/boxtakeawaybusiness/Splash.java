@@ -5,6 +5,7 @@ package com.xinzuokeji.boxtakeawaybusiness;
 //
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -28,14 +29,16 @@ public class Splash extends BaseActivity {
     public int user_id, storeId;
     public String user_phone;
 
-//    //版本更新
-//    UpdateManager update = new UpdateManager(Splash.this);
 
     @Override
     public void initView() {
         super.initView();
         NetService netService = new NetService(this);
-
+        //发送广播记录应用使用次数
+        Intent intentnew = new Intent();
+        intentnew.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        intentnew.setAction("app_start_num");
+        sendBroadcast(intentnew);
         // 去掉信息栏
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -63,17 +66,7 @@ public class Splash extends BaseActivity {
                 e.printStackTrace();
             }
         }
-        //版本检查更新
-//        if (!update.checkUpdate()) {
-//        new Thread() {
-//            @Override
-//            public void run() {
-//                Looper.prepare();
-//
-//            }
-//        }
-//                .start();
-//        }
+
     }
 
 

@@ -97,11 +97,6 @@ public class YuOrderWarnTime extends BaseActivity {
         });
         lv_warn_time.setAdapter(listViewAdapter);
         listViewAdapter.notifyDataSetChanged();
-        //4当时间一到，将执行的响应
-//        Intent intent = new Intent();
-//        intent.setAction("com.zking.risk_android_alarn_notification.RING");
-//        pendingIntent = PendingIntent.getBroadcast(YuOrderWarnTime.this, 0x101, intent, 0);
-//        alarmManager.set(AlarmManager.RTC_WAKEUP, 10, pendingIntent);
         mHandler = new Handler();
         mHandler.postDelayed(new Runnable() {
             @Override
@@ -114,8 +109,11 @@ public class YuOrderWarnTime extends BaseActivity {
                         requestCode, intent, PendingIntent.FLAG_UPDATE_CURRENT);
                 // 5秒后发送广播，然后每个10秒重复发广播。广播都是直接发到AlarmReceiver的
                 int triggerAtTime = (int) (SystemClock.elapsedRealtime() + 3 * 600 * 1000);
-                int interval = 10 * 1000;
-                alarmMgr.setRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, 5, interval, pendIntent);
+                int interval = 1000 * 60 * 60 * 24;
+                if (alarmMgr != null) {
+
+                    alarmMgr.setRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(), interval, pendIntent);
+                }
             }
         }, 0);
     }

@@ -121,7 +121,7 @@ public class AdvanceOrder extends BaseActivity implements XListView.IXListViewLi
                 if (orderInfo.distribution_info.equals("0")) {
                     tv_peisong_fee.setText("+￥" + orderInfo.distribution_fee);
                 } else {
-                    tv_peisong_fee.setText("-￥" + orderInfo.distribution_fee);
+                    tv_peisong_fee.setText("+￥" + orderInfo.distribution_fee);
                 }
                 TextView tv_canhe = holder.getView(R.id.tv_canhe);//餐盒费
                 tv_canhe.setText("+￥" + orderInfo.lunch_box_fee);

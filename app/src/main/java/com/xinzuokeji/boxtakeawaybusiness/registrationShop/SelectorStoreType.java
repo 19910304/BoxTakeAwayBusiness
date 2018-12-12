@@ -22,11 +22,9 @@ import com.xinzuokeji.boxtakeawaybusiness.BaseActivity;
 import com.xinzuokeji.boxtakeawaybusiness.R;
 import com.xinzuokeji.boxtakeawaybusiness.adapter.ListViewAdapter;
 import com.xinzuokeji.boxtakeawaybusiness.adapter.ViewHolder;
-import com.xinzuokeji.boxtakeawaybusiness.entities.Sanji;
 import com.xinzuokeji.boxtakeawaybusiness.entities.Shoptype;
 import com.xinzuokeji.boxtakeawaybusiness.netService.NetService;
 import com.xinzuokeji.boxtakeawaybusiness.util.ACache;
-import com.xinzuokeji.boxtakeawaybusiness.util.MyGridView;
 import com.xinzuokeji.boxtakeawaybusiness.util.Utility;
 import com.xinzuokeji.boxtakeawaybusiness.util.Valid;
 
@@ -96,13 +94,13 @@ public class SelectorStoreType extends BaseActivity {
                 TextView tv_shop_type = holder.getView(R.id.tv_shop_type);
                 tv_shop_type.setText(shoptype.typename);
                 //   选择的内容
-                MyGridView gv_manage_type = holder.getView(R.id.gv_manage_type);
-                List<Sanji> mDatesan = new ArrayList<>();
+                com.xinzuokeji.boxtakeawaybusiness.util.MyGridView gv_manage_type = holder.getView(R.id.gv_manage_type);
+                List<com.xinzuokeji.boxtakeawaybusiness.entities.Sanji> mDatesan = new ArrayList<>();
                 mDatesan = shoptype.Sanji;
-                final List<Sanji> finalMDatesan = mDatesan;
-                ListViewAdapter<Sanji> sanjiListViewAdapter = new ListViewAdapter<Sanji>(SelectorStoreType.this, R.layout.item_manage_type, finalMDatesan) {
+                final List<com.xinzuokeji.boxtakeawaybusiness.entities.Sanji> finalMDatesan = mDatesan;
+                ListViewAdapter<com.xinzuokeji.boxtakeawaybusiness.entities.Sanji> sanjiListViewAdapter = new ListViewAdapter<com.xinzuokeji.boxtakeawaybusiness.entities.Sanji>(SelectorStoreType.this, R.layout.item_manage_type, finalMDatesan) {
                     @Override
-                    public void convert(ViewHolder holder, final Sanji sanji, final int id, int selectedPosition) {
+                    public void convert(ViewHolder holder, final com.xinzuokeji.boxtakeawaybusiness.entities.Sanji sanji, final int id, int selectedPosition) {
                         final Button bt_manage_type_name = holder.getView(R.id.bt_manage_type_name);
                         bt_manage_type_name.setText(sanji.typename);
                         //如果第一次和上页类型一样则显示红色
@@ -135,22 +133,50 @@ public class SelectorStoreType extends BaseActivity {
                 gv_manage_type.setAdapter(sanjiListViewAdapter);
                 sanjiListViewAdapter.notifyDataSetChanged();
                 //  流式布局
-//                final TagFlowLayout tagFlowLayout = holder.getView(R.id.id_flowlayout);
+//                final com.zhy.view.flowlayout.TagFlowLayout tagFlowLayout = holder.getView(R.id.id_flowlayout);
 //                final LayoutInflater mInflater = LayoutInflater.from(SelectorStoreType.this);
 //                final List<String> tagFlowDate = new ArrayList<>();
+//                final List<String> tagFlowDateid = new ArrayList<>();
 //                for (int i = 0; i < finalMDatesan.size(); i++) {
 //                    tagFlowDate.add(finalMDatesan.get(i).typename);
-////                    tagFlowDate.add(finalMDatesan.get(i).id);
 //                }
-//                tagFlowLayout.setAdapter(new TagAdapter<String>(tagFlowDate) {
+//                for (int i = 0; i < finalMDatesan.size(); i++) {
+//                    tagFlowDateid.add(finalMDatesan.get(i).id);
+//                }
+//                tagFlowLayout.setAdapter(new com.zhy.view.flowlayout.TagAdapter<String>(tagFlowDate) {
 //                    @Override
-//                    public View getView(com.zhy.view.flowlayout.FlowLayout parent, int position, String shoptype) {
+//                    public View getView(com.zhy.view.flowlayout.FlowLayout parent, final int position, String shoptype) {
 ////                              将tv.xml文件填充到标签内.
-//                        TextView tv = (TextView) mInflater.inflate(R.layout.item_manage_type_tag,
+//                        final TextView tv = (TextView) mInflater.inflate(R.layout.item_manage_type_tag,
 //                                tagFlowLayout, false);
 ////                              为标签设置对应的内容
+//                        //如果第一次和上页类型一样则显示红色
+//                        if (tagFlowDateid.get(position).equals(aCache.getAsString("manage_type_id"))) {
+//                            tv.setTextColor(getResources().getColor(R.color.red));
+//                        } else {
+//                            tv.setTextColor(getResources().getColor(R.color.gray_dark));
+//                        }
 //                        tv.setText(shoptype);
-////                        AutoUtils.autoSize(tv);
+//                        tv.setOnClickListener(new View.OnClickListener() {
+//                            @Override
+//                            public void onClick(View v) {
+//                                tv.setTextColor(getResources().getColor(R.color.gray_dark));
+////                                // 将经营id和经营名字缓存
+//                                String manage_type_id = tagFlowDateid.get(position);//经营类型id
+//                                String typename = tagFlowDate.get(position);//经营类型名字
+//                                aCache.put("manage_type_id", manage_type_id);
+//                                aCache.put("typename", typename);
+//                                if (tagFlowDateid.get(position).equals(aCache.getAsString("manage_type_id"))) {
+//                                    tv.setTextColor(getResources().getColor(R.color.red));
+////                                    Log.i("name", aCache.getAsString("manage_type_id") + "---");
+//                                    Log.i("tas", "onClick: " + manage_type_id + typename);
+//                                } else {
+//                                    tv.setTextColor(getResources().getColor(R.color.gray_dark));
+//                                }
+//                                ShoptypelistViewAdapter.notifyDataSetChanged();
+//                            }
+//
+//                        });
 //                        return tv;
 //                    }
 //
@@ -160,6 +186,7 @@ public class SelectorStoreType extends BaseActivity {
 //                        return s.equals(tagFlowDate.get(position));
 //                    }
 //                });
+
             }
         };
         lv_manage_type.setAdapter(ShoptypelistViewAdapter);

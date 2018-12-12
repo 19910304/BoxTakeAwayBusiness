@@ -175,6 +175,7 @@ public class GSApplication extends Application {
             // 设置通知出现时的闪灯（如果 android 设备支持的话）
             mChannel.enableLights(true);
             mChannel.setLightColor(Color.RED);
+            mChannel.setShowBadge(true);
             // 设置通知出现时的震动（如果 android 设备支持的话）
             mChannel.enableVibration(true);
             mChannel.setVibrationPattern(new long[]{100, 200, 300, 400, 500, 400, 300, 200, 400});
