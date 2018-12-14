@@ -26,7 +26,7 @@
 <!--暂时不用-->
     <com.zhy.view.flowlayout.TagFlowLayout
         android:id="@+id/id_flowlayout"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingLeft="17px"
         zhy:max_select="1"

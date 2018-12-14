@@ -120,7 +120,7 @@ public class ShopPhoto extends BaseActivity {
                     @Override
                     public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                         if (ck_item_shop_photo.isChecked()) {
-                            //  数组下标越界
+                            //  注意数组下标越界
                             shopimgids.add(mDate.get(id).id);
                         } else {
                             remove(shopimgids, mDatas.get(id).id);
@@ -303,10 +303,7 @@ public class ShopPhoto extends BaseActivity {
                             } else {
                                 url = "https://" + Bucket + "/" + picName;
                             }
-
                         }
-
-
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }

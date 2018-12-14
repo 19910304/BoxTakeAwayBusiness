@@ -127,8 +127,10 @@ public class Rebates extends BaseActivity {
                 refundGoods.setNumnew(refundGoods.num);
                 if (refundGoods.getSelected().equals("1")) {
                     refundGoods.setChecked(true);
+                    ck_caipin.setChecked(true);
                 } else {
                     refundGoods.setChecked(false);
+                    ck_caipin.setChecked(false);
                 }
                 //菜品名称
                 TextView tv_caipin_name = holder.getView(R.id.tv_caipin_name);
@@ -181,17 +183,12 @@ public class Rebates extends BaseActivity {
                     public void onClick(View view) {
                         float allPrice;
                         if (refundGoods.getChecked().equals(true)) {
-//                            Log.i("is", refundGoods.IsChecked + "---");
-//                            allPrice = Float.valueOf(refundGoods.getNum()) * refundGoods.getSale();
-//                            refundGoods.setTotal(String.valueOf(allPrice));
+
                             netService.showRefundGoodsSelect(Integer.parseInt(oid), Integer.parseInt(refundGoods.getOrder_goods_id()), Hander_showRefundGoodsnew);
                         } else {
                             netService.showRefundGoodsUnselect(Integer.parseInt(oid), Integer.parseInt(refundGoods.getOrder_goods_id()), Hander_showRefundGoodsnew);
                         }
-//
-//                        BigDecimal pSum = new BigDecimal("0.00");
-//                        pSum = pSum.add(new BigDecimal(refundGoods.getTotal()));
-//                        totalnew = 0.00;
+
                         //循环得到总钱数
                         int nums = 0, numnews = 0;
                         for (int i = 0; i < mDateCaipin.size(); i++) {
@@ -204,12 +201,6 @@ public class Rebates extends BaseActivity {
                             numnews = numnews + Integer.parseInt(mDateCaipin.get(i).numnew);
 //                            totalnew = Utility.add(totalnew, Double.valueOf(mDateCaipin.get(i).getTotal()));
                         }
-//                        if (goodsisCheck.size() == mDateCaipin.size() && nums == numnews) {
-//                            //  distribution_fee
-//                            tv_rebates_all_money.setText("退款金额 ￥" + (Utility.add(totalnew, distribution_fee)));
-//                        } else {
-//                            tv_rebates_all_money.setText("退款金额 ￥" + totalnew);
-//                        }
 
                         if (ck_caipin.isChecked()) {
                             if (Integer.parseInt(refundGoods.getNumnew()) > 1) {

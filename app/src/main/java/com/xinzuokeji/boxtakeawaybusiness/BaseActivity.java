@@ -600,7 +600,7 @@ public class BaseActivity extends AppCompatActivity implements View.OnClickListe
         SharedPreferences mSharedPreferences = getSharedPreferences("loginUser", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = mSharedPreferences.edit();
         editor.putInt("user_id", user_id);
-        editor.commit();
+        editor.apply();
     }
 
     //店铺头像

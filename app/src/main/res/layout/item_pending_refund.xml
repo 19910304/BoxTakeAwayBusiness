@@ -264,18 +264,19 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/font_size_14sp"
-                android:text="平台服务费"
+                android:layout_marginTop="@dimen/font_size_18sp"
+                android:text="总金额"
                 android:textColor="@color/black_text"
                 android:textSize="@dimen/font_size_15sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/font_size_18sp"
-                android:text="总金额"
+                android:layout_marginTop="@dimen/font_size_14sp"
+                android:text="平台服务费"
                 android:textColor="@color/black_text"
                 android:textSize="@dimen/font_size_15sp" />
+
 
             <TextView
                 android:layout_width="wrap_content"
@@ -320,6 +321,15 @@
                 android:textSize="@dimen/font_size_15sp" />
 
             <TextView
+                android:id="@+id/tv_all_fee"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/font_size_18sp"
+                android:text="￥0"
+                android:textColor="@color/red"
+                android:textSize="@dimen/font_size_15sp" />
+
+            <TextView
                 android:id="@+id/tv_service_charge"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -328,14 +338,6 @@
                 android:textColor="@color/black_text"
                 android:textSize="@dimen/font_size_15sp" />
 
-            <TextView
-                android:id="@+id/tv_all_fee"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/font_size_18sp"
-                android:text="￥0"
-                android:textColor="@color/red"
-                android:textSize="@dimen/font_size_15sp" />
 
             <TextView
                 android:id="@+id/tv_projected_income"

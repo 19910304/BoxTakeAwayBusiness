@@ -237,7 +237,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/dimen_16dp"
-            android:text="1.保证打印机有纸\n2.保证盒籽外卖商家前端运行 \n3.单量较小时用单量较小时用，单量较小时用单量较小时用单量较小时用"
+            android:text="@string/setting_order"
             android:textColor="#999999"
             android:textSize="@dimen/font_size_14sp" />
     </LinearLayout>

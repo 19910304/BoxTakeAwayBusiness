@@ -18,7 +18,7 @@
             android:layout_marginLeft="10dp"
             android:background="@drawable/rebates_selector"
             android:button="@null"
-            android:checked="true" />
+            />
 
         <ImageView
             android:id="@+id/img_caipin"

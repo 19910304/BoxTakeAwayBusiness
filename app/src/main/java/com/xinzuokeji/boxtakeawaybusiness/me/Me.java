@@ -38,8 +38,6 @@ import com.xinzuokeji.boxtakeawaybusiness.util.Valid;
 import java.lang.ref.WeakReference;
 import java.util.Objects;
 
-import static com.xinzuokeji.boxtakeawaybusiness.GSApplication.getInstance;
-
 public class Me extends Fragment implements View.OnClickListener {
     LinearLayout ll_store_setting, ll_dayin_setting, ll_message_setting, ll_order_setting,
             ll_merchant_service_enter, ll_feedback, ll_me_zh, ll_exit_login, ll_store_apply;
@@ -76,10 +74,9 @@ public class Me extends Fragment implements View.OnClickListener {
         netService = new NetService(getActivity());
         mHandler = new Handler();
         sp = GSApplication.getInstance().getSharedPreferences("loginUser", Context.MODE_PRIVATE);
-        editor = sp.edit();
         //取得user_id
-        user_id = sp.getInt("user_id", 1);
-        storeId = sp.getInt("storeId", 1);
+        user_id = sp.getInt("user_id", 0);
+        storeId = sp.getInt("storeId", 0);
         phone = sp.getString("user_phone", "");
         String shopName = sp.getString("shop_name", "");//店铺名字
         String accountName = sp.getString("account_name", "");//用户名字
@@ -110,12 +107,6 @@ public class Me extends Fragment implements View.OnClickListener {
         ImageLoader.getInstance().displayImage(headImg, circleImageView, GSApplication.getInstance().optionshead);
         tv_operating_state = view.findViewById(R.id.tv_operating_state);
         tv_operating_state_new = view.findViewById(R.id.tv_operating_state_new);
-        //  店铺状态
-        //***************************
-        //取得user_phone
-        String user_phone = sp.getString("user_phone", "");
-
-        // ************************
         //调取页面信息
         netService.showDataMe(user_id, storeId, showDataMe);
     }
@@ -249,17 +240,16 @@ public class Me extends Fragment implements View.OnClickListener {
                     if (msg.obj != null) {
                         com.xinzuokeji.boxtakeawaybusiness.entities.StoreInfo storeInfo = (StoreInfo) msg.obj;
                         if (Valid.isNotNullOrEmpty(storeInfo.shopid)) {
+                            editor = sp.edit();
                             editor.putInt("storeId", Integer.parseInt(storeInfo.shopid));
                             editor.putInt("user_id", Integer.parseInt(storeInfo.bid));
                             editor.putString("shop_name", storeInfo.shop_name);
                             editor.putString("account_name", storeInfo.account_name);
                             editor.putString("storeIcon", storeInfo.head_img);
-                            editor.commit();
+                            editor.apply();
                             tv_shop_name.setText(storeInfo.shop_name);
                             tv_account_name.setText(storeInfo.account_name);
-                            if (phone.equals(getInstance().ceshiphone)) {
-                                tv_account_name.setText("zhangxs");
-                            }
+
                             if (storeInfo.shop_status.equals("0")) {
                                 tv_operating_state.setText("未营业");
                                 tv_operating_state_new.setText("未营业");

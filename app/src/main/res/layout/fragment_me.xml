@@ -43,19 +43,23 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="32dp"
                         android:orientation="horizontal"
-                        android:visibility="invisible">
+                        android:visibility="visible">
 
                         <ImageButton
                             android:id="@+id/switcher_store"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
-                            android:background="@mipmap/reflash" />
+                            android:background="@mipmap/reflash"
+                            android:visibility="invisible"/>
 
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1" />
+                            android:layout_weight="1"
+                            android:textColor="@color/tomato"
+                            android:textSize="3sp"
+                            android:text="真的好喜欢你"/>
                         <!--二维码-->
                         <ImageButton
                             android:id="@+id/img_erweima"

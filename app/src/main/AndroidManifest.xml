@@ -383,7 +383,9 @@
         <activity android:name="com.xinzuokeji.boxtakeawaybusiness.registrationShop.SetUpShopOne">
 
         </activity>
-        <activity android:name="com.xinzuokeji.boxtakeawaybusiness.registrationShop.SelectorStoreType"></activity>
+        <activity android:name="com.xinzuokeji.boxtakeawaybusiness.registrationShop.SelectorStoreType">
+
+        </activity>
         <activity
             android:name="com.xinzuokeji.boxtakeawaybusiness.registrationShop.SetUpShopTwo"
             android:windowSoftInputMode="adjustUnspecified|stateHidden|adjustPan">
@@ -534,10 +536,13 @@
             android:screenOrientation="portrait"
             android:theme="@style/OnePixelActivity" />
         <!--闹钟订单提醒-->
-        <receiver android:name="com.xinzuokeji.boxtakeawaybusiness.revice.RingReceived">
+        <receiver
+            android:name="com.xinzuokeji.boxtakeawaybusiness.revice.RingReceived"
+            android:process=":remote">
             <intent-filter>
                 <action android:name="com.zking.risk_android_alarn_notification.RING"></action>
             </intent-filter>
+
         </receiver>
         <!--<activity-->
         <!--android:name="com.zzti.fengyongge.imagepicker.PhotoPreviewActivity"-->

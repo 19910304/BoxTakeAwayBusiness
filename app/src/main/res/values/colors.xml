@@ -21,6 +21,7 @@
     <color name="white_ee">#eeffffff</color>
     <color name="red">#FA6161</color>
     <color name="red_cus">#FF5F5F</color>
+    <color name="tomato">#FF6347</color> <!--西红柿色 -->
     <!--DBDBDB-->
     <color name="gray">#DBDBDB</color>
     <color name="background_new">#EBEBEB</color>

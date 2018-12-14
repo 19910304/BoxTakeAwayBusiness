@@ -217,13 +217,13 @@ public class UserEvaluation extends BaseActivity implements XListView.IXListView
                     bt_huifu.setVisibility(View.GONE);
                     ll_huifu.setVisibility(View.GONE);
                 }
-
-
                 bt_huifu.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-                        imm.toggleSoftInput(0, InputMethodManager.HIDE_NOT_ALWAYS);
+                        if (imm != null) {
+                            imm.toggleSoftInput(0, InputMethodManager.HIDE_NOT_ALWAYS);
+                        }
                         bt_EvaluateReply = bt_huifu;
                         ll_EvaluateReply = ll_huifu;
                         tv_EvaluateReply = tv_huifu_content;
@@ -247,7 +247,6 @@ public class UserEvaluation extends BaseActivity implements XListView.IXListView
             @Override
             public void run() {
 
-//                netService.negativeComment(GetstoreId(), negativeComment);
             }
         }, 1000);
 
@@ -372,7 +371,6 @@ public class UserEvaluation extends BaseActivity implements XListView.IXListView
                     et_EvaluateReply.clearFocus();
                     mPopWindow.dismiss();
 
-//                    hideInput(view);
                     netService.showEvaluateReply(GetstoreId(), evaluationId, str_EvaluateReply, showEvaluatehuifu);
                 }
 
@@ -650,7 +648,7 @@ public class UserEvaluation extends BaseActivity implements XListView.IXListView
                     showTip(msg.obj.toString(), Toast.LENGTH_SHORT);
                     break;
                 case 1001:
-
+                    showTip(getString(R.string.network_error), Toast.LENGTH_SHORT);
                     break;
                 default:
                     break;
