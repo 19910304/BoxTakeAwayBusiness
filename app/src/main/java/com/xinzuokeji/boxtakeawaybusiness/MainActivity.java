@@ -252,6 +252,7 @@ public class MainActivity extends FragmentActivity implements AMapLocationListen
 
     }
 
+
     //注册监听屏幕的广播
     private void pixelReceiver() {
         //注册监听屏幕的广播

@@ -325,7 +325,7 @@ public class OrderManagement extends Fragment implements View.OnClickListener, X
                 et_order_number.setOnLongClickListener(new View.OnLongClickListener() {
                     @Override
                     public boolean onLongClick(View view) {
-                        ClipboardManager cm = (ClipboardManager) getActivity().getSystemService(Context.CLIPBOARD_SERVICE);
+                        ClipboardManager cm = (ClipboardManager) GSApplication.getInstance().getSystemService(Context.CLIPBOARD_SERVICE);
                         cm.setText(orderInfo.ordernum);
                         Toast.makeText(getActivity(), "订单号已复制到剪切板，快去粘贴吧~", Toast.LENGTH_SHORT).show();
                         return false;
@@ -366,8 +366,11 @@ public class OrderManagement extends Fragment implements View.OnClickListener, X
                         } else {
                             tv_dishes.setText(s.goods_name);
                         }
-                        tv_dishes_number.setText("x" + s.num);
-                        tv_dishes_prices.setText("￥" + s.total);
+                        // 单线程使用StringBuilder 效率更快
+                        StringBuilder text = new StringBuilder("×");
+                        tv_dishes_number.setText(text.append(s.num));
+                        StringBuilder text1 = new StringBuilder("￥");
+                        tv_dishes_prices.setText(text1.append(s.total));
                     }
                 };
                 lv_good.setAdapter(listViewAdapter);

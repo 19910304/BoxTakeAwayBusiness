@@ -26,7 +26,7 @@ public class OrderInfo implements Serializable {
     public String lunch_box_fee;
     //配送费
     public String distribution_fee;
-    //平台奖励
+    //预计输入
     public String platform_fee;
     //订单状态 0 未付款 1已取消 2已付款 等待商家接单
 // 3 商家接单 正在备餐（等待骑手接单）
@@ -55,15 +55,15 @@ public class OrderInfo implements Serializable {
     //  骑手id
     public String rider_id = "0";
     //骑手名字
-    public String rider_name;
+    public String rider_name = "";
     //骑手头像
-    public String img;
+    public String img = "";
     // 待发配送骑手
-    public String rider_img;
+    public String rider_img = "";
     //骑手电话
-    public String rider_phone;
+    public String rider_phone = "";
     //骑手电话
-    public String riderphone;
+    public String riderphone = "";
     //用户id
     public String id;
     //收货人名字
@@ -101,19 +101,19 @@ public class OrderInfo implements Serializable {
     // 退款原因
     public String reason;
     // 其他原因
-    public String other_reason;
+    public String other_reason = "";
     //申请退款时间
-    public String re_add_time;
+    public String re_add_time = "";
     //商家同意退款时间
-    public String shop_time;
+    public String shop_time = "";
     //退款中时间
-    public String con_time;
+    public String con_time = "";
     // 该订单里程
     public String mileage;
     // 预计收入
     public String expected_income;
     //备注
-    public String remarks;
+    public String remarks = "";
     //商家是否已经评价过骑手 0：未评价 其他：已评价
     public String evaluate_rider;
     //    是否已出餐 0没出餐 1已出餐

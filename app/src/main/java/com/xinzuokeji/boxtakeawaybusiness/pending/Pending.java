@@ -183,7 +183,7 @@ public class Pending extends Fragment implements View.OnClickListener, XListView
                                 et_order_number.setOnLongClickListener(new View.OnLongClickListener() {
                                     @Override
                                     public boolean onLongClick(View view) {
-                                        ClipboardManager cm = (ClipboardManager) getActivity().getSystemService(Context.CLIPBOARD_SERVICE);
+                                        ClipboardManager cm = (ClipboardManager) GSApplication.getInstance().getSystemService(Context.CLIPBOARD_SERVICE);
                                         cm.setText(orderInfo.ordernum);
                                         Toast.makeText(getActivity(), "订单号已复制到剪切板，快去粘贴吧~", Toast.LENGTH_SHORT).show();
                                         return false;
@@ -224,8 +224,10 @@ public class Pending extends Fragment implements View.OnClickListener, XListView
                                         } else {
                                             tv_dishes.setText(s.goods_name);
                                         }
-                                        tv_dishes_number.setText("×" + s.num);
-                                        tv_dishes_prices.setText("￥" + s.total);
+                                        StringBuilder text = new StringBuilder("×");
+                                        tv_dishes_number.setText(text.append(s.num));
+                                        StringBuilder text1 = new StringBuilder("￥");
+                                        tv_dishes_prices.setText(text1.append(s.total));
                                     }
                                 };
                                 lv_good.setAdapter(listViewAdapter);
@@ -391,7 +393,7 @@ public class Pending extends Fragment implements View.OnClickListener, XListView
                                 et_order_number.setOnLongClickListener(new View.OnLongClickListener() {
                                     @Override
                                     public boolean onLongClick(View view) {
-                                        ClipboardManager cm = (ClipboardManager) getActivity().getSystemService(Context.CLIPBOARD_SERVICE);
+                                        ClipboardManager cm = (ClipboardManager) GSApplication.getInstance().getSystemService(Context.CLIPBOARD_SERVICE);
                                         cm.setText(orderInfo.ordernum);
                                         Toast.makeText(getActivity(), "订单号已复制到剪切板，快去粘贴吧~", Toast.LENGTH_SHORT).show();
                                         return false;
@@ -430,8 +432,10 @@ public class Pending extends Fragment implements View.OnClickListener, XListView
                                         } else {
                                             tv_dishes.setText(s.goods_name);
                                         }
-                                        tv_dishes_number.setText("×" + s.num);
-                                        tv_dishes_prices.setText("￥" + s.total);
+                                        StringBuilder text = new StringBuilder("×");
+                                        tv_dishes_number.setText(text.append(s.num));
+                                        StringBuilder text1 = new StringBuilder("￥");
+                                        tv_dishes_prices.setText(text1.append(s.total));
                                     }
                                 };
                                 lv_good.setAdapter(listViewAdapter);
@@ -645,7 +649,7 @@ public class Pending extends Fragment implements View.OnClickListener, XListView
                                 et_order_number.setOnLongClickListener(new View.OnLongClickListener() {
                                     @Override
                                     public boolean onLongClick(View view) {
-                                        ClipboardManager cm = (ClipboardManager) getActivity().getSystemService(Context.CLIPBOARD_SERVICE);
+                                        ClipboardManager cm = (ClipboardManager) GSApplication.getInstance().getSystemService(Context.CLIPBOARD_SERVICE);
                                         cm.setText(orderInfo.ordernum);
                                         Toast.makeText(getActivity(), "订单号已复制到剪切板，快去粘贴吧~", Toast.LENGTH_SHORT).show();
                                         return false;
@@ -685,8 +689,10 @@ public class Pending extends Fragment implements View.OnClickListener, XListView
                                         } else {
                                             tv_dishes.setText(s.goods_name);
                                         }
-                                        tv_dishes_number.setText("×" + s.num);
-                                        tv_dishes_prices.setText("￥" + s.total);
+                                        StringBuilder text = new StringBuilder("×");
+                                        tv_dishes_number.setText(text.append(s.num));
+                                        StringBuilder text1 = new StringBuilder("￥");
+                                        tv_dishes_prices.setText(text1.append(s.total));
                                     }
                                 };
                                 lv_good.setAdapter(listViewAdapter);
@@ -824,7 +830,7 @@ public class Pending extends Fragment implements View.OnClickListener, XListView
                                 et_order_number.setOnLongClickListener(new View.OnLongClickListener() {
                                     @Override
                                     public boolean onLongClick(View view) {
-                                        ClipboardManager cm = (ClipboardManager) getActivity().getSystemService(Context.CLIPBOARD_SERVICE);
+                                        ClipboardManager cm = (ClipboardManager) GSApplication.getInstance().getSystemService(Context.CLIPBOARD_SERVICE);
                                         cm.setText(orderInfo.ordernum);
                                         Toast.makeText(getActivity(), "订单号已复制到剪切板，快去粘贴吧~", Toast.LENGTH_SHORT).show();
                                         return false;
@@ -863,8 +869,10 @@ public class Pending extends Fragment implements View.OnClickListener, XListView
                                         } else {
                                             tv_dishes.setText(s.goods_name);
                                         }
-                                        tv_dishes_number.setText("×" + s.num);
-                                        tv_dishes_prices.setText("￥" + s.total);
+                                        StringBuilder text = new StringBuilder("×");
+                                        tv_dishes_number.setText(text.append(s.num));
+                                        StringBuilder text1 = new StringBuilder("￥");
+                                        tv_dishes_prices.setText(text1.append(s.total));
                                     }
                                 };
                                 lv_good.setAdapter(listViewAdapter);
@@ -1054,8 +1062,11 @@ public class Pending extends Fragment implements View.OnClickListener, XListView
                         } else {
                             tv_dishes.setText(s.goods_name);
                         }
-                        tv_dishes_number.setText("×" + s.num);
-                        tv_dishes_prices.setText("￥" + s.total);
+                        // 单线程使用StringBuilder 效率更快
+                        StringBuilder text = new StringBuilder("×");
+                        tv_dishes_number.setText(text.append(s.num));
+                        StringBuilder text1 = new StringBuilder("￥");
+                        tv_dishes_prices.setText(text1.append(s.total));
                     }
                 };
                 lv_good.setAdapter(listViewAdapter);
@@ -1244,11 +1255,11 @@ public class Pending extends Fragment implements View.OnClickListener, XListView
                     }
                     btAgreeRefund.setVisibility(View.GONE);
                     btRepulseRefund.setVisibility(View.GONE);
-                    Toast.makeText(getActivity(), msg.obj.toString(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), msg.obj.toString() + "", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(getActivity(), MainActivity.class);
                     intent.putExtra("class_name", "RefundSuccess");
-                    MainActivity.mActivity.finish();
                     startActivity(intent);
+                    MainActivity.mActivity.finish();
                     break;
                 case 2001:
 //                    bt.setClickable(true);
@@ -1256,7 +1267,7 @@ public class Pending extends Fragment implements View.OnClickListener, XListView
                     if (dialog.isShowing()) {
                         dialog.dismiss();
                     }
-                    Toast.makeText(getActivity(), msg.obj.toString(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), msg.obj.toString() + "", Toast.LENGTH_SHORT).show();
                     break;
                 case 1001:
                     // 正在显示就销毁
@@ -1477,5 +1488,11 @@ public class Pending extends Fragment implements View.OnClickListener, XListView
             intent.putExtra("point_wd", jd);
             context.startActivity(intent);
         }
+    }
+
+    private String appendstring(String s1, String s2) {
+        StringBuilder text = new StringBuilder(s1);
+        String s = text.append(s2).toString();
+        return s;
     }
 }
