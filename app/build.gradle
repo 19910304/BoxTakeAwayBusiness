@@ -42,12 +42,12 @@ android {
             keyAlias('key0')
             keyPassword('hezibok369')
         }
-        debug {
-            storeFile file('D:\\appkey\\APPKEYbok\\keystore.jks')
-            storePassword('hezibok369')
-            keyAlias('key0')
-            keyPassword('hezibok369')
-        }
+//        debug {
+//            storeFile file('D:\\appkey\\APPKEYbok\\keystore.jks')
+//            storePassword('hezibok369')
+//            keyAlias('key0')
+//            keyPassword('hezibok369')
+//        }
     }
     buildTypes {
 

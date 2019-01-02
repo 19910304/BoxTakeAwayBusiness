@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.xinzuokeji.boxtakeawaybusiness.GSApplication;
 import com.xinzuokeji.boxtakeawaybusiness.R;
 import com.xinzuokeji.boxtakeawaybusiness.entities.NetworkImageHolderView;
 import com.xinzuokeji.boxtakeawaybusiness.entities.StoreOperations_Banner;
@@ -57,13 +58,11 @@ public class StoreOperations extends Fragment implements View.OnClickListener {
         // 加载布局
         View view = inflater.inflate(R.layout.fragment_store_operations, container, false);
         netService = new NetService(getActivity());
-
-        SharedPreferences sp = getActivity().getSharedPreferences("loginUser", Context.MODE_PRIVATE);
+        SharedPreferences sp = GSApplication.getInstance().getSharedPreferences("loginUser", Context.MODE_PRIVATE);
         //storeId
-        storeId = sp.getInt("storeId", 1);
+        storeId = sp.getInt("storeId", 0);
         initView(view, inflater, container);
         initEvent(view);
-
         return view;
     }
 
@@ -86,7 +85,6 @@ public class StoreOperations extends Fragment implements View.OnClickListener {
         LinearLayout.LayoutParams linearParams = (LinearLayout.LayoutParams) convenientBanner.getLayoutParams();
         linearParams.height = (int) (Utility.getScreenWidthforPX(getActivity()) / 2.42f);
         convenientBanner.setLayoutParams(linearParams);
-
         convenientBanner.setPageIndicator(new int[]{R.mipmap.ic_page_indicator, R.mipmap.ic_page_indicator_focused})
                 .setOnItemClickListener(new OnItemClickListener() {
                     @Override

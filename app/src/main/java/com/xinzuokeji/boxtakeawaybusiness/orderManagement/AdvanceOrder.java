@@ -115,7 +115,7 @@ public class AdvanceOrder extends BaseActivity implements XListView.IXListViewLi
                 tv_client_name.setText(orderInfo.name);//收货人名字
                 tv_client_phone.setText(orderInfo.phone);//收货人电话
                 tv_client_address.setText(orderInfo.address + orderInfo.building_card + "(" + orderInfo.mileage + "km)");//详细地址
-                tv_service_charge.setText("-￥" + orderInfo.service_price);//平台服务费
+                tv_service_charge.setText("￥" + orderInfo.service_price);//平台服务费
                 tv_projected_income.setText("￥" + orderInfo.platform_fee);//预计输入
                 TextView tv_peisong_fee = holder.getView(R.id.tv_peisong_fee);//配送费
                 if (orderInfo.distribution_info.equals("0")) {

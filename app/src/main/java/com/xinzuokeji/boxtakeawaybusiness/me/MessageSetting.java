@@ -1,6 +1,7 @@
 package com.xinzuokeji.boxtakeawaybusiness.me;
 
 import android.app.Activity;
+import android.app.AppOpsManager;
 import android.app.NotificationManager;
 import android.app.Service;
 import android.content.BroadcastReceiver;
@@ -16,8 +17,9 @@ import android.os.Build;
 import android.os.Handler;
 import android.os.Vibrator;
 import android.provider.Settings;
+import android.support.annotation.Nullable;
+import android.support.annotation.RequiresApi;
 import android.view.View;
-import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.SeekBar;
@@ -26,6 +28,9 @@ import android.widget.TextView;
 
 import com.xinzuokeji.boxtakeawaybusiness.BaseActivity;
 import com.xinzuokeji.boxtakeawaybusiness.R;
+
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 
 import static com.xinzuokeji.boxtakeawaybusiness.GSApplication.REQUEST_SETTING_NOTIFICATION;
 
@@ -39,6 +44,7 @@ public class MessageSetting extends BaseActivity {
     VolumeReceiver receiver;
     ContentObserver mVoiceObserver;
     private LinearLayout ll_notification;
+    private TextView tv_notification;
 
     @Override
     public void initView() {
@@ -48,7 +54,6 @@ public class MessageSetting extends BaseActivity {
         IntentFilter filter = new IntentFilter();
         filter.addAction("android.media.VOLUME_CHANGED_ACTION");
         registerReceiver(receiver, filter);
-
         //获取手机震动服务
         mVibrator = (Vibrator) getApplication().getSystemService(Service.VIBRATOR_SERVICE);
 
@@ -58,7 +63,8 @@ public class MessageSetting extends BaseActivity {
         textView.setText("消息设置");
         sw_on_off = findViewById(R.id.sw_on_off);
         seek_volume = findViewById(R.id.pro_volume);
-
+        //通知显示
+        tv_notification = findViewById(R.id.tv_notification);
         audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
         //获取系统最大音量
         int maxVolume = 0;
@@ -79,13 +85,31 @@ public class MessageSetting extends BaseActivity {
         super.initEvent();
         header_back.setOnClickListener(this);
         ll_notification.setOnClickListener(this);
-        sw_on_off.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            if (isNotificationEnabled(this)) {
+                tv_notification.setText("开启");
+            } else {
+                tv_notification.setText("关闭");
+            }
+        }
+        //获取振动开启状态
+        if (getVibrator()) {
+            sw_on_off.setChecked(true);
+        } else {
+            sw_on_off.setChecked(false);
+        }
+
+        sw_on_off.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
+            public void onClick(View v) {
+                if (sw_on_off.isChecked()) {
+                    sw_on_off.setChecked(true);
                     mVibrator.vibrate(new long[]{100, 100, 100, 1000}, -1);
+                    setVibrator(true);
                 } else {
+                    sw_on_off.setChecked(false);
                     mVibrator.cancel();
+                    setVibrator(false);
                 }
             }
         });
@@ -149,31 +173,7 @@ public class MessageSetting extends BaseActivity {
     }
 
     //跳转到应用权限设置界面
-    private void notification() {
-        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            Intent intent = new Intent();
-            intent.setAction("android.settings.APP_NOTIFICATION_SETTINGS");
-            intent.putExtra("app_package", this.getPackageName());
-            intent.putExtra("app_uid", this.getApplicationInfo().uid);
-            startActivity(intent);
-        } else if (android.os.Build.VERSION.SDK_INT == Build.VERSION_CODES.KITKAT) {
-            Intent intent = new Intent();
-            intent.setAction(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
-            intent.addCategory(Intent.CATEGORY_DEFAULT);
-            intent.setData(Uri.parse("package:" + this.getPackageName()));
-            startActivity(intent);
-        }
-//        if (Valid.isNotificationEnabled(this)) {
-//
-//        } else {
-//            showTip("检测到您没有打开通知权限，请去设置页面打开", Toast.LENGTH_SHORT);
-//        }
-
-
-    }
-
-    //跳转到应用权限设置界面
-    public  void gotoNotificationSetting(Activity activity) {
+    public void gotoNotificationSetting(Activity activity) {
         ApplicationInfo appInfo = activity.getApplicationInfo();
         String pkg = activity.getApplicationContext().getPackageName();
         int uid = appInfo.uid;
@@ -200,9 +200,61 @@ public class MessageSetting extends BaseActivity {
             }
         } catch (Exception e) {
             Intent intent = new Intent(Settings.ACTION_SETTINGS);
-            activity.startActivityForResult(intent,REQUEST_SETTING_NOTIFICATION);
+            activity.startActivityForResult(intent, REQUEST_SETTING_NOTIFICATION);
 
         }
+    }
+
+    //开启通知回调
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == REQUEST_SETTING_NOTIFICATION) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+                if (isNotificationEnabled(this)) {
+                    tv_notification.setText("开启");
+                } else {
+                    tv_notification.setText("关闭");
+                }
+            }
+        }
+    }
+
+    //android开发通知栏权限是否开启
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+    public boolean isNotificationEnabled(Context context) {
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            //8.0手机以上
+            if (((NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE)).getImportance() == NotificationManager.IMPORTANCE_NONE) {
+                return false;
+            }
+        }
+
+        String CHECK_OP_NO_THROW = "checkOpNoThrow";
+        String OP_POST_NOTIFICATION = "OP_POST_NOTIFICATION";
+
+        AppOpsManager mAppOps = (AppOpsManager) context.getSystemService(Context.APP_OPS_SERVICE);
+        ApplicationInfo appInfo = context.getApplicationInfo();
+        String pkg = context.getApplicationContext().getPackageName();
+        int uid = appInfo.uid;
+
+        Class appOpsClass = null;
+
+        try {
+            appOpsClass = Class.forName(AppOpsManager.class.getName());
+            Method checkOpNoThrowMethod = appOpsClass.getMethod(CHECK_OP_NO_THROW, Integer.TYPE, Integer.TYPE,
+                    String.class);
+            Field opPostNotificationValue = appOpsClass.getDeclaredField(OP_POST_NOTIFICATION);
+
+            int value = (Integer) opPostNotificationValue.get(Integer.class);
+            return ((Integer) checkOpNoThrowMethod.invoke(mAppOps, value, uid, pkg) == AppOpsManager.MODE_ALLOWED);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 
     private class VolumeReceiver extends BroadcastReceiver {

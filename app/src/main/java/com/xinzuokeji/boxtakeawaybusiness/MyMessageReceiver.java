@@ -81,7 +81,7 @@ public class MyMessageReceiver extends MessageReceiver {
         }
     }
 
-    //退出登录弹框
+    //退出登录弹框 ,此方法需要悬浮窗权限，弃用
     private void dialogout(final Context context) {
         final AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(context);
         View view = LayoutInflater.from(context).inflate(R.layout.pop_push_xiaxian, null);
@@ -141,7 +141,7 @@ public class MyMessageReceiver extends MessageReceiver {
     }
 
     /**
-     * 接受到对应消息后，消息的弹出处理
+     * 接受到对应消息后，消息的弹出处理 透传信息使用
      */
     public void buildNotification(Context context, CPushMessage message) {
         Log.i("build", "sss");

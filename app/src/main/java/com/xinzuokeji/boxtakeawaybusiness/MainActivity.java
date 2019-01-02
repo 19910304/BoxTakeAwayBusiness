@@ -8,7 +8,6 @@ import android.app.AppOpsManager;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
@@ -44,7 +43,6 @@ import com.xinzuokeji.boxtakeawaybusiness.me.Me;
 import com.xinzuokeji.boxtakeawaybusiness.netService.NetService;
 import com.xinzuokeji.boxtakeawaybusiness.orderManagement.OrderManagement;
 import com.xinzuokeji.boxtakeawaybusiness.pending.Pending;
-import com.xinzuokeji.boxtakeawaybusiness.revice.OnePixelReceiver;
 import com.xinzuokeji.boxtakeawaybusiness.storeOperations.StoreOperations;
 import com.xinzuokeji.boxtakeawaybusiness.util.ACache;
 import com.xinzuokeji.boxtakeawaybusiness.util.UpdateManager;
@@ -94,7 +92,7 @@ public class MainActivity extends FragmentActivity implements AMapLocationListen
     private Handler mHandler;
     private NetService netService;
     // 店铺id
-    private int storeId;
+    private int storeId, user_id;
     public String user_phone;
     ACache aCache;
 
@@ -106,7 +104,8 @@ public class MainActivity extends FragmentActivity implements AMapLocationListen
         startPermission();
         SharedPreferences sp = getSharedPreferences("loginUser", Context.MODE_PRIVATE);
         //storeId
-        storeId = sp.getInt("storeId", 1);
+        storeId = sp.getInt("storeId", 0);
+        user_id = sp.getInt("user_id", 0);
         user_phone = sp.getString("user_phone", "");
         //透明状态栏
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
@@ -141,9 +140,7 @@ public class MainActivity extends FragmentActivity implements AMapLocationListen
         location();
         initView();
         initEvnet();
-
     }
-
 
     // 初始化事件
     private void initEvnet() {
@@ -247,22 +244,8 @@ public class MainActivity extends FragmentActivity implements AMapLocationListen
             m_viewPager.setCurrentItem(0);
             pageSelect(0);
         }
-        //注册监听屏幕的广播
-//        pixelReceiver();
-
     }
 
-
-    //注册监听屏幕的广播
-    private void pixelReceiver() {
-        //注册监听屏幕的广播
-        OnePixelReceiver mOnepxReceiver = new OnePixelReceiver();
-        IntentFilter intentFilter = new IntentFilter();
-        intentFilter.addAction("android.intent.action.SCREEN_OFF");
-        intentFilter.addAction("android.intent.action.SCREEN_ON");
-        intentFilter.addAction("android.intent.action.USER_PRESENT");
-        registerReceiver(mOnepxReceiver, intentFilter);
-    }
 
     //刷新今天订单信息
     private final Handle_todayOrder handle_todayOrder = new Handle_todayOrder(this);
@@ -325,11 +308,11 @@ public class MainActivity extends FragmentActivity implements AMapLocationListen
                     navi.destroy();
                 }
                 //应用退到后台
-                moveTaskToBack(true);
+//                moveTaskToBack(true);
                 //结束应用
-//                BaseActivity baseActivity = new BaseActivity();
-//                baseActivity.removeALLActivity();
-//                finish();
+                BaseActivity baseActivity = new BaseActivity();
+                baseActivity.removeALLActivity();
+                finish();
 //                抛弃
 //                android.os.Process.killProcess(android.os.Process.myPid());
 //                System.exit(0);
@@ -340,39 +323,23 @@ public class MainActivity extends FragmentActivity implements AMapLocationListen
         return super.dispatchKeyEvent(event);
     }
 
-    //广播监听home键
-    private static HomeWatcherReceiver mHomeKeyReceiver = null;
-
-    private static void registerHomeKeyReceiver(Context context) {
-        Log.i("", "registerHomeKeyReceiver");
-        mHomeKeyReceiver = new HomeWatcherReceiver();
-        final IntentFilter homeFilter = new IntentFilter(Intent.ACTION_CLOSE_SYSTEM_DIALOGS);
-        context.registerReceiver(mHomeKeyReceiver, homeFilter);
-    }
-
-    private static void unregisterHomeKeyReceiver(Context context) {
-        Log.i("", "unregisterHomeKeyReceiver");
-        if (null != mHomeKeyReceiver) {
-            context.unregisterReceiver(mHomeKeyReceiver);
-        }
-    }
 
     @Override
     protected void onResume() {
         super.onResume();
-        registerHomeKeyReceiver(this);
+        if (user_id == 0 || storeId == 0) {
+            Intent intent = new Intent(this, LogoutActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+        }
     }
 
     @Override
     protected void onPause() {
-        unregisterHomeKeyReceiver(this);
         super.onPause();
     }
 
-    @Override
-    public void onPointerCaptureChanged(boolean hasCapture) {
 
-    }
 
 
     private void location() {
@@ -462,13 +429,12 @@ public class MainActivity extends FragmentActivity implements AMapLocationListen
                 Intent intentnew = new Intent();
                 intentnew.putExtra("Location", android.os.Build.MODEL + aMapLocation.getCity() + "--" + aMapLocation.getDistrict() + "-" + aMapLocation.getStreet() + "-" + aMapLocation.getStreetNum() + lo + "," + la);
                 intentnew.putExtra("user_phone", user_phone);
-                intentnew.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intentnew.setFlags(Intent.FLAG_INCLUDE_STOPPED_PACKAGES);
                 intentnew.setAction("location");
                 sendBroadcast(intentnew);
                 if (aMapLocation.getCity() != null) {
                     setCity(aMapLocation.getCity());
                 }
-
                 //将坐标设置成全局
                 GSApplication.getInstance().setLatitude(la);
                 GSApplication.getInstance().setLongitude(lo);
@@ -491,7 +457,6 @@ public class MainActivity extends FragmentActivity implements AMapLocationListen
                     if (aMapLocation.getCity() != null) {
                         setCity(aMapLocation.getCity());
                     }
-//                    Toast.makeText(getApplicationContext(), buffer.toString() + la + "*" + lo, Toast.LENGTH_LONG).show();
                     isFirstLoc = false;
                 }
             } else {

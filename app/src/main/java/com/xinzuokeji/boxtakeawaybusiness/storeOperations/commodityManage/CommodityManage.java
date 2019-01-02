@@ -58,12 +58,14 @@ public class CommodityManage extends BaseActivity {
     private TextView tv_menus_name, tv_menus_dis;
     private List<String> itemShopId = new ArrayList<>();
     private String selectpostion = "0";
+    ACache aCache;
 
     @Override
     public void initView() {
         super.initView();
         setContentView(R.layout.activity_commodity_manage);
         netService = new NetService(this);
+        aCache = ACache.get(CommodityManage.this);
         //头信息
         LinearLayout ll_action_header = findViewById(R.id.ll_action_header);
         ll_action_header.setBackgroundColor(getResources().getColor(R.color.red));
@@ -114,6 +116,8 @@ public class CommodityManage extends BaseActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 selectpostion = String.valueOf(position);
                 menuid = Integer.parseInt(mdateMenu.get(position).id);
+                aCache.put("menu_position", selectpostion);
+                aCache.put("menuid", mdateMenu.get(position).id);
                 listViewAdapter1.clearSelection(position);
                 listViewAdapter1.notifyDataSetChanged();
                 // 分类的名字
@@ -226,6 +230,7 @@ public class CommodityManage extends BaseActivity {
                 }
                 break;
             case R.id.bt_new_shangpin://新建商品
+                aCache.put("menu_position", selectpostion);
                 if (mdateMenu.size() != 0) {
                     HashMap<String, String> extras = new HashMap<>();
                     extras.put("menuid", String.valueOf(menuid));
@@ -241,7 +246,7 @@ public class CommodityManage extends BaseActivity {
 
                 break;
             case R.id.bt_caidan_bianji://编辑菜单
-//                Log.i("size", String.valueOf(mdateMenu.size()));
+                aCache.put("menu_position", selectpostion);
                 Intent intent = new Intent(this, CaidanBianji.class);
                 intent.putExtra("mdateMenu", (Serializable) mdateMenu);
                 startActivity(intent);
@@ -251,19 +256,21 @@ public class CommodityManage extends BaseActivity {
         }
     }
 
+
     @Override
     protected void onRestart() {
         super.onRestart();
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                ACache aCache = ACache.get(CommodityManage.this);
                 String menu_position = aCache.getAsString("menu_position");
                 String menuid = aCache.getAsString("menuid");
                 if (Valid.isNotNullOrEmpty(menu_position) && Valid.isNotNullOrEmpty(menuid)) {
                     lv_caidan1.setSelection(Integer.parseInt(menu_position));
                     lv_caidan1.setAdapter(listViewAdapter1);
                     listViewAdapter1.notifyDataSetChanged();
+                    tv_menus_name.setText(mdateMenu.get(Integer.parseInt(selectpostion)).menu_name);
+                    tv_menus_dis.setText(mdateMenu.get(Integer.parseInt(selectpostion)).describe);
                     netService.showGoodsData(GetstoreId(), Integer.parseInt(menuid), showGoodsData);
                 }
 
@@ -272,10 +279,10 @@ public class CommodityManage extends BaseActivity {
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                ACache aCache = ACache.get(CommodityManage.this);
+
                 String caidan = aCache.getAsString("caidan");
                 if (Valid.isNotNullOrEmpty(caidan)) {
-                    netService.showMenu(GetstoreId(), showMenu);
+                    netService.showMenu(GetstoreId(), showMenuRestart);
                 }
 
             }
@@ -326,7 +333,7 @@ public class CommodityManage extends BaseActivity {
     private static class ShowGoodsData extends Handler {
         private final WeakReference<CommodityManage> mActivity;
 
-        public ShowGoodsData(CommodityManage activity) {
+        private ShowGoodsData(CommodityManage activity) {
             mActivity = new WeakReference<CommodityManage>(activity);
         }
 
@@ -368,42 +375,55 @@ public class CommodityManage extends BaseActivity {
         }
     }
 
-    //    // 显示对应菜单下的商品
-//    @SuppressLint("HandlerLeak")
-//    Handler showGoodsData = new Handler() {
-//        @Override
-//        public void handleMessage(Message msg) {
-//            switch (msg.what) {
-//                case 2000:
-//                    if (msg.obj.toString().equals("[]")) {
-//                        addedItem.clear();
-//                        // 重新选择菜单必须清空商品id
-//                        itemShopId.clear();
-//                        mAdapter.notifyDataSetChanged();
-////                        Toast.makeText(CommodityManage.this, "暂无数据", Toast.LENGTH_SHORT).show();
-//                    } else {
-//                        addedItem.clear();
-//                        addedItem.addAll((Collection<? extends GoodsData>) msg.obj);
-//                        mAdapter.notifyDataSetChanged();
-//                        itemShopId.clear();
-//                        for (int i = 0; i < addedItem.size(); i++) {
-//                            String goodid = addedItem.get(i).goods_id;
-//                            itemShopId.add(i, goodid);
-//                        }
-//                    }
-//                    break;
-//                case 2001:
-////                    showTip(msg.obj.toString(), Toast.LENGTH_SHORT);
-//                    break;
-//                case 1001:
-//
-//                    break;
-//                default:
-//                    break;
-//            }
-//            super.handleMessage(msg);
-//        }
-//    };
+    // 返回的菜单分类
+    @SuppressLint("HandlerLeak")
+    Handler showMenuRestart = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            switch (msg.what) {
+                case 2000:
+                    if (msg.obj.toString().equals("[]")) {
+                        mdateMenu.clear();
+                        listViewAdapter1.notifyDataSetChanged();
+                    } else {
+                        String menu_position = aCache.getAsString("menu_position");
+                        String menuid = aCache.getAsString("menuid");
+                        mdateMenu.clear();
+                        mdateMenu.addAll((Collection<? extends GoodsMenu>) msg.obj);
+                        // 刚进来显示菜单名字和描述
+                        if (mdateMenu.size() != 0) {
+                            if (Valid.isNotNullOrEmpty(menu_position)) {
+                                tv_menus_name.setText(mdateMenu.get(Integer.parseInt(menu_position)).menu_name);
+                                tv_menus_dis.setText(mdateMenu.get(Integer.parseInt(menu_position)).describe);
+                            } else {
+                                tv_menus_name.setText(mdateMenu.get(0).menu_name);
+                                tv_menus_dis.setText(mdateMenu.get(0).describe);
+                                // 删除分类之后默认选中第一项
+                                listViewAdapter1.clearSelection(0);
+                                netService.showGoodsData(GetstoreId(), Integer.parseInt(mdateMenu.get(0).id), showGoodsData);
+                            }
+                        }
+
+                        if (Valid.isNotNullOrEmpty(menu_position) && Valid.isNotNullOrEmpty(menuid)) {
+                            lv_caidan1.setSelection(Integer.parseInt(menu_position));
+                            netService.showGoodsData(GetstoreId(), Integer.parseInt(menuid), showGoodsData);
+                        }
+                        lv_caidan1.setAdapter(listViewAdapter1);
+                        listViewAdapter1.notifyDataSetChanged();
+                    }
+                    break;
+                case 2001:
+//                    showTip(msg.obj.toString(), Toast.LENGTH_SHORT);
+                    break;
+                case 1001:
+
+                    break;
+                default:
+                    break;
+            }
+            super.handleMessage(msg);
+        }
+    };
     // 菜单分类
     @SuppressLint("HandlerLeak")
     Handler showMenu = new Handler() {
@@ -422,6 +442,8 @@ public class CommodityManage extends BaseActivity {
                         if (mdateMenu.size() != 0) {
                             tv_menus_name.setText(mdateMenu.get(0).menu_name);
                             tv_menus_dis.setText(mdateMenu.get(0).describe);
+                            //第一次进来设置默认第一条的menuid
+                            aCache.put("menuid", mdateMenu.get(0).id);
                         }
                         listViewAdapter1.notifyDataSetChanged();
                         netService.showGoodsData(GetstoreId(), Integer.parseInt(mdateMenu.get(0).id), showGoodsData);
@@ -440,20 +462,6 @@ public class CommodityManage extends BaseActivity {
         }
     };
 
-    public static class PluginItem {
-
-        public String mName;
-
-        public PluginItem() {
-
-        }
-
-        public PluginItem(String name) {
-            mName = name;
-        }
-
-
-    }
 
     /**
      * 点击已添加／未添加按钮

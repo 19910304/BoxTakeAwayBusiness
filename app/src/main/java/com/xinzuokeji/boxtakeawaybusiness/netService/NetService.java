@@ -139,6 +139,8 @@ public class NetService extends BaseServices {
     public RequestHandle Handle_ShopOutFood;
     // 商家手动接单
     public RequestHandle Handle_manualReceipt;
+    // 商家取消订单
+    public RequestHandle Handle_cander_order;
     // 预订单
     public RequestHandle showPreorder;
     // 显示菜单列表接口
@@ -239,10 +241,11 @@ public class NetService extends BaseServices {
     public RequestHandle Hander_balanceWater;
     // 添加/修改商品属性接口
     public RequestHandle Hander_addAttribute;
-    //----测试服务器 http://www.kvaiya.cn
-    private static String mHost = "http://waimai.023wx.cn/";
-//    private static String mHost = "http://www.qiaoba.ren/";
-    //    private static String mHost = "http://www.kvaiya.cn/";
+    //----正式
+//     private static String mHost = "http://waimai.023wx.cn/";
+    // 测试服务器
+    private static String mHost = "http://waimai.023jtkj.com/";
+
     private static String sheng = "http://xx.com/api/geograph/getprovince";
     private static String shi = "http://xx.com/api/geograph/getCity";
     private static String qu = "http://xx.com/api/geograph/getArea";
@@ -295,7 +298,7 @@ public class NetService extends BaseServices {
         });
     }
 
-    // 系统登录
+    // 密码登录
     public void Login(String phone, String passwords, String equipment, String target_value, final Handler handler) {
 
         // 请求的URL地址
@@ -3669,6 +3672,69 @@ public class NetService extends BaseServices {
                 Message message = new Message();
                 message.what = AsyncHttpClient.REQUEST_FAILURE;
                 handler.sendMessage(message);
+            }
+        });
+    }
+
+    //    商家取消订单 ，副id
+    public void cancelOrder(int orderid, final Handler handler) {
+        // 请求的URL地址
+        String url = mHost + "/userapi/order/cancel_order";
+        // 请求参数
+        ByteArrayEntity entity = null;
+        JSONObject jsonObject = new JSONObject();
+        try {
+            jsonObject.put("id", orderid);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        Log.i("cancel_order", jsonObject.toString());
+        try {
+            entity = new ByteArrayEntity(jsonObject.toString().getBytes("UTF-8"));
+            entity.setContentType(new BasicHeader(HTTP.CONTENT_TYPE, "application/json"));
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        // 服务请求
+        Handle_cander_order = AsyncHttpClient.post(mContext, url, entity, "application/json", new JsonHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+
+                Log.i("LD.NET_DEBUG_INFO", response.toString());
+
+                try {
+                    JSONObject status = new JSONObject(response.getString("status"));
+                    status.getString("code");
+                    status.getString("message");
+                    if (status.getString("code").equals("200")) {
+                        Message message = new Message();
+                        message.what = DATA_SUCCESS;
+                        message.obj = status.getString("message");
+                        handler.sendMessage(message);
+                    } else {
+                        Message message = new Message();
+                        message.what = DATA_FAILURE;
+                        message.obj = status.getString("message");
+                        handler.sendMessage(message);
+                    }
+
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
+                Log.i("LD.NET_DEBUG_INFO", responseString);
+                Message message = new Message();
+                message.what = AsyncHttpClient.REQUEST_FAILURE;
+                handler.sendMessage(message);
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
+                super.onFailure(statusCode, headers, throwable, errorResponse);
             }
         });
     }
@@ -7552,16 +7618,8 @@ public class NetService extends BaseServices {
                     if (status.getString("code").equals("200")) {
                         Message message = new Message();
                         message.what = DATA_SUCCESS;
-//                        String data = status.getString("message");
-
                         String date = response.getString("data");
                         message.obj = date;
-//                        if (Valid.isNotNullOrEmpty(response.getString("data"))) {
-//                            message.obj = new JSONDeserialize<>(all_order.class, response.getString("data")).toObjects();
-//                        } else {
-//                            JSONObject data = new JSONObject(response.getString("data"));
-//
-//                        }
                         handler.sendMessage(message);
                     } else {
                         Message message = new Message();
@@ -7569,8 +7627,6 @@ public class NetService extends BaseServices {
                         message.obj = response.toString();
                         handler.sendMessage(message);
                     }
-
-
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -8139,6 +8195,14 @@ public class NetService extends BaseServices {
                 Log.i("LD.NET_DEBUG_INFO11", responseString);
                 Message message = new Message();
                 message.what = AsyncHttpClient.REQUEST_FAILURE;
+                handler.sendMessage(message);
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
+                super.onFailure(statusCode, headers, throwable, errorResponse);
+                Message message = new Message();
+                message.what = AsyncHttpClient.REQUEST_FAILURE_NET;
                 handler.sendMessage(message);
             }
         });

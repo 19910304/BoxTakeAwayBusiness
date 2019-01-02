@@ -12,7 +12,6 @@
         tools:ignore="ProtectedPermissions" />
     <uses-permission android:name="android.permission.INTERNET" />
 
-    <uses-permission android:name="android.permission.VIBRATE" />
     <!--这个权限用于允许程序在手机屏幕关闭后后台进程仍然运行-->
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <!--<uses-permission android:name="android.permission.WRITE_SETTINGS" />-->
@@ -75,7 +74,8 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission>
     <!--用于获取wifi的获取权限，wifi信息会用来进行网络定位-->
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"></uses-permission>
-
+    <!-- 设置手机震动权限 -->
+    <uses-permission android:name="android.permission.VIBRATE" />
     <application
         android:name="com.xinzuokeji.boxtakeawaybusiness.GSApplication"
         android:allowBackup="true"
@@ -333,7 +333,9 @@
         <activity android:name="com.xinzuokeji.boxtakeawaybusiness.storeOperations.commodityManage.ChangeGuige"></activity>
         <activity android:name="com.xinzuokeji.boxtakeawaybusiness.storeOperations.userEvaluation.UserEvaluation"></activity>
         <activity android:name="com.xinzuokeji.boxtakeawaybusiness.storeOperations.caiwu.Caiwu"></activity>
-        <activity android:name="com.xinzuokeji.boxtakeawaybusiness.storeOperations.caiwu.Rearch"></activity>
+        <activity
+            android:name="com.xinzuokeji.boxtakeawaybusiness.storeOperations.caiwu.Rearch"
+            android:label="充值"></activity>
         <activity android:name="com.xinzuokeji.boxtakeawaybusiness.storeOperations.caiwu.Account"></activity>
         <activity
             android:name="com.xinzuokeji.boxtakeawaybusiness.storeOperations.caiwu.OrderHistory"

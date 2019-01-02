@@ -615,7 +615,7 @@ public class BaseActivity extends AppCompatActivity implements View.OnClickListe
         SharedPreferences mSharedPreferences = getSharedPreferences("loginUser", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = mSharedPreferences.edit();
         editor.putString("storeIcon", storeIcon);
-        editor.commit();
+        editor.apply();
     }
 
     //开店中店铺id
@@ -725,6 +725,22 @@ public class BaseActivity extends AppCompatActivity implements View.OnClickListe
         return WarnTime;
     }
 
+    //保存是否开启振动
+    public void setVibrator(boolean isVibrator) {
+        SharedPreferences mSharedPreferences = getSharedPreferences("Vibrator", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = mSharedPreferences.edit();
+        editor.putBoolean("vibrator", isVibrator);
+        editor.apply();
+    }
+
+    //获取是否开启振动
+    public boolean getVibrator() {
+        SharedPreferences sp = getSharedPreferences("Vibrator", Context.MODE_PRIVATE);
+        //取得WarnTime
+        boolean isVibrator = sp.getBoolean("vibrator", false);
+        return isVibrator;
+    }
+
     //清除用户信息
     public void ClearloginUser() {
         SharedPreferences sp = getSharedPreferences("loginUser", Context.MODE_PRIVATE);
@@ -744,6 +760,7 @@ public class BaseActivity extends AppCompatActivity implements View.OnClickListe
         double f1 = bg.setScale(2, BigDecimal.ROUND_HALF_UP).doubleValue();
         return f1;
     }
+
     //设配唯一id
     public String getIMEI() {
         TelephonyManager TelephonyMgr = (TelephonyManager) this.getApplicationContext().getSystemService(TELEPHONY_SERVICE);

@@ -507,6 +507,15 @@
             android:textColor="#FA6161" />
 
         <Button
+            android:id="@+id/bt_order_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_marginRight="13dp"
+            android:background="@drawable/cancel_order_selector"
+            android:text="取消"
+            android:textColor="#FA6161" />
+
+        <Button
             android:id="@+id/bt_order_receiving"
             android:layout_width="wrap_content"
             android:layout_height="35dp"

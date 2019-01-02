@@ -22,7 +22,6 @@
             android:layout_weight="1"
             android:background="@drawable/register_et_selector"
             android:hint="请输入新密码"
-            android:inputType="phone"
             android:textColor="#999999"
             android:textSize="@dimen/font_size_18sp" />
 
@@ -59,7 +58,6 @@
             android:layout_weight="1"
             android:background="@drawable/register_et_selector"
             android:hint="请再次输入密码"
-            android:inputType="phone"
             android:textColor="#999999"
             android:textSize="@dimen/font_size_18sp" />
 

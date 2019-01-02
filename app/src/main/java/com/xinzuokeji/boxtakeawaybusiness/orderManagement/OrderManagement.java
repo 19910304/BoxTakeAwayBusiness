@@ -89,6 +89,7 @@ public class OrderManagement extends Fragment implements View.OnClickListener, X
         initView(view, inflater, container);
         initEvent(view);
         return view;
+
     }
 
 
@@ -106,7 +107,7 @@ public class OrderManagement extends Fragment implements View.OnClickListener, X
         mHandler = new Handler();
         SharedPreferences sp = GSApplication.getInstance().getSharedPreferences("loginUser", Context.MODE_PRIVATE);
         //storeId
-        storeId = sp.getInt("storeId", 1);
+        storeId = sp.getInt("storeId", 0);
         netService = new NetService(getActivity());
         //订单的三个状态
         rdg_order = view.findViewById(R.id.rdg_order);
@@ -308,7 +309,7 @@ public class OrderManagement extends Fragment implements View.OnClickListener, X
                 tv_all_fee.setText("￥" + orderInfo.total_fee);
                 // 平台服务费
                 TextView tv_service_charge = holder.getView(R.id.tv_service_charge);
-                tv_service_charge.setText("-￥" + orderInfo.service_price);
+                tv_service_charge.setText("￥" + orderInfo.service_price);
                 //预送达时间
 //                if () {
 //                }

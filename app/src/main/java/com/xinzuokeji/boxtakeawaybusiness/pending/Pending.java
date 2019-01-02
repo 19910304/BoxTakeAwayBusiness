@@ -42,6 +42,10 @@ import com.xinzuokeji.boxtakeawaybusiness.util.LoadingDialog;
 import com.xinzuokeji.boxtakeawaybusiness.util.Valid;
 import com.xinzuokeji.boxtakeawaybusiness.util.listviewshangxia.XListView;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.lang.ref.WeakReference;
 import java.net.URLEncoder;
 import java.util.ArrayList;
@@ -66,9 +70,10 @@ public class Pending extends Fragment implements View.OnClickListener, XListView
     static LinearLayout ll_order_no;
     static ImageView img_order_no;
     TextView tv_order_no;
-    Button bt, btMealsWheels, btRepulseRefund, btAgreeRefund;
+    Button bt, btMealsWheels, btRepulseRefund, btAgreeRefund, btCanderOrder;
     LoadingDialog.Builder loadBuilder;
     public LoadingDialog dialog = null;
+    int canderPosition;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -109,7 +114,7 @@ public class Pending extends Fragment implements View.OnClickListener, XListView
                         netService.showUntreated(storeId, showUntreated);
                         mAdapter = new ListViewAdapter<OrderInfo>(getActivity(), R.layout.item_fragment_pending, mDate) {
                             @Override
-                            public void convert(ViewHolder holder, final OrderInfo orderInfo, int id, int selectedPosition) {
+                            public void convert(ViewHolder holder, final OrderInfo orderInfo, final int id, int selectedPosition) {
                                 //备注
                                 LinearLayout ll_remark = holder.getView(R.id.ll_remark);
                                 if (Valid.isNotNullOrEmpty(orderInfo.remarks)) {
@@ -139,7 +144,7 @@ public class Pending extends Fragment implements View.OnClickListener, XListView
                                 tv_all_fee.setText("￥" + orderInfo.total_fee);
                                 // 平台服务费
                                 TextView tv_service_charge = holder.getView(R.id.tv_service_charge);
-                                tv_service_charge.setText("-￥" + orderInfo.service_price);
+                                tv_service_charge.setText("￥" + orderInfo.service_price);
 //                                is_pro_order	int	是否为预订单 0:否 1:是
 //                                dispatch_type	int	1.外送 2.自取
                                 if (orderInfo.is_pro_order.equals("1")) {
@@ -239,6 +244,8 @@ public class Pending extends Fragment implements View.OnClickListener, XListView
                                 final Button bt_cancel_order = holder.getView(R.id.bt_cancel_order);
                                 // 接单
                                 final Button bt_order_receiving = holder.getView(R.id.bt_order_receiving);
+                                // 取消订单
+                                final Button bt_order_cancel = holder.getView(R.id.bt_order_cancel);
                                 bt_cancel_order.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View v) {
@@ -250,6 +257,7 @@ public class Pending extends Fragment implements View.OnClickListener, XListView
                                 bt_order_receiving.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View v) {
+                                        loading();
                                         bt = bt_order_receiving;
                                         //判断是否为预订单，不是预订单到待发配送，
                                         if (orderInfo.is_pro_order.equals("1")) {
@@ -257,8 +265,34 @@ public class Pending extends Fragment implements View.OnClickListener, XListView
                                         } else {
                                             netService.manualReceipt(Integer.parseInt(orderInfo.oid), Hander_manualReceipt);
                                         }
-                                        bt_cancel_order.setVisibility(View.GONE);
                                         bt_order_receiving.setClickable(false);
+                                    }
+                                });
+                                // 取消订单
+                                bt_order_cancel.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+                                        loading();
+                                        canderPosition = id;
+                                        btCanderOrder = bt_order_cancel;
+                                        bt_order_cancel.setClickable(false);
+                                        JSONArray goodsArray = new JSONArray();
+                                        // 选中的商品添加到退款项中
+                                        for (int i = 0; i < orderInfo.goods.size(); i++) {
+                                            JSONObject jsonObject = new JSONObject();
+                                            try {
+                                                jsonObject.put("order_goods_id", orderInfo.goods.get(i).order_id);
+                                                jsonObject.put("goods_id", orderInfo.goods.get(i).goods_id);
+                                                jsonObject.put("num", orderInfo.goods.get(i).num);
+                                                jsonObject.put("sale", orderInfo.goods.get(i).goods_price);
+                                                goodsArray.put(jsonObject);
+                                            } catch (JSONException e) {
+                                                e.printStackTrace();
+                                            }
+
+                                        }
+                                        netService.activeRefund(Integer.parseInt(orderInfo.order_main_id), Double.parseDouble(orderInfo.total_fee), "商家取消订单", "没货了", goodsArray, Hander_activeRefund);
+//
                                     }
                                 });
                             }
@@ -337,7 +371,7 @@ public class Pending extends Fragment implements View.OnClickListener, XListView
                                 EditText et_order_number = holder.getView(R.id.et_order_number);//订单编号
                                 // 平台服务费
                                 TextView tv_service_charge = holder.getView(R.id.tv_service_charge);
-                                tv_service_charge.setText("-￥" + orderInfo.service_price);
+                                tv_service_charge.setText("￥" + orderInfo.service_price);
                                 TextView tv_peisong_fee = holder.getView(R.id.tv_peisong_fee);//配送费
                                 if (orderInfo.distribution_info.equals("0")) {
                                     tv_peisong_fee.setText("+￥" + orderInfo.distribution_fee);
@@ -544,7 +578,7 @@ public class Pending extends Fragment implements View.OnClickListener, XListView
                                 EditText et_order_number = holder.getView(R.id.et_order_number);//订单编号
                                 // 平台服务费
                                 TextView tv_service_charge = holder.getView(R.id.tv_service_charge);
-                                tv_service_charge.setText("-￥" + orderInfo.service_price);
+                                tv_service_charge.setText("￥" + orderInfo.service_price);
                                 TextView tv_peisong_fee = holder.getView(R.id.tv_peisong_fee);//配送费
                                 if (orderInfo.distribution_info.equals("0")) {
                                     tv_peisong_fee.setText("+￥" + orderInfo.distribution_fee);
@@ -776,7 +810,7 @@ public class Pending extends Fragment implements View.OnClickListener, XListView
                                 EditText et_order_number = holder.getView(R.id.et_order_number);//订单编号
                                 // 平台服务费
                                 TextView tv_service_charge = holder.getView(R.id.tv_service_charge);
-                                tv_service_charge.setText("-￥" + orderInfo.service_price);
+                                tv_service_charge.setText("￥" + orderInfo.service_price);
                                 TextView tv_peisong_fee = holder.getView(R.id.tv_peisong_fee);//配送费
                                 if (orderInfo.distribution_info.equals("0")) {
                                     tv_peisong_fee.setText("+￥" + orderInfo.distribution_fee);
@@ -946,7 +980,7 @@ public class Pending extends Fragment implements View.OnClickListener, XListView
 
         mAdapter = new ListViewAdapter<OrderInfo>(getActivity(), mLayoutId, mDate) {
             @Override
-            public void convert(ViewHolder holder, final OrderInfo orderInfo, int id, int selectedPosition) {
+            public void convert(ViewHolder holder, final OrderInfo orderInfo, final int id, int selectedPosition) {
                 //备注
                 LinearLayout ll_remark = holder.getView(R.id.ll_remark);
                 if (Valid.isNotNullOrEmpty(orderInfo.remarks)) {
@@ -965,7 +999,7 @@ public class Pending extends Fragment implements View.OnClickListener, XListView
                 EditText et_order_number = holder.getView(R.id.et_order_number);//订单编号
                 // 平台服务费
                 TextView tv_service_charge = holder.getView(R.id.tv_service_charge);
-                tv_service_charge.setText("-￥" + orderInfo.service_price);
+                tv_service_charge.setText("￥" + orderInfo.service_price);
                 TextView tv_peisong_fee = holder.getView(R.id.tv_peisong_fee);//配送费
                 if (orderInfo.distribution_info.equals("0")) {
                     tv_peisong_fee.setText("+￥" + orderInfo.distribution_fee);
@@ -1087,6 +1121,7 @@ public class Pending extends Fragment implements View.OnClickListener, XListView
                     bt_order_receiving.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
+                            loading();
                             bt = bt_order_receiving;
                             //判断是否为预订单，不是预订单到待发配送，
                             if (orderInfo.is_pro_order.equals("1")) {
@@ -1094,8 +1129,35 @@ public class Pending extends Fragment implements View.OnClickListener, XListView
                             } else {
                                 netService.manualReceipt(Integer.parseInt(orderInfo.oid), Hander_manualReceipt);
                             }
-                            bt_cancel_order.setVisibility(View.GONE);
                             bt_order_receiving.setClickable(false);
+                        }
+                    });
+                    // 取消订单
+                    final Button bt_order_cancel = holder.getView(R.id.bt_order_cancel);
+                    // 取消订单
+                    bt_order_cancel.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            canderPosition = id;
+                            btCanderOrder = bt_order_cancel;
+                            bt_order_cancel.setClickable(false);
+                            JSONArray goodsArray = new JSONArray();
+                            loading();
+                            // 选中的商品添加到退款项中
+                            for (int i = 0; i < orderInfo.goods.size(); i++) {
+                                JSONObject jsonObject = new JSONObject();
+                                try {
+                                    jsonObject.put("order_goods_id", orderInfo.goods.get(i).order_id);
+                                    jsonObject.put("goods_id", orderInfo.goods.get(i).goods_id);
+                                    jsonObject.put("num", orderInfo.goods.get(i).num);
+                                    jsonObject.put("sale", orderInfo.goods.get(i).goods_price);
+                                    goodsArray.put(jsonObject);
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+
+                            }
+                            netService.activeRefund(Integer.parseInt(orderInfo.order_main_id), Double.parseDouble(orderInfo.total_fee), "商家取消订单", "没货了", goodsArray, Hander_activeRefund);
                         }
                     });
                 }
@@ -1193,12 +1255,59 @@ public class Pending extends Fragment implements View.OnClickListener, XListView
         }, 2000);
     }
 
+    //取消订单结果
+    @SuppressLint("HandlerLeak")
+    Handler Hander_activeRefund = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            switch (msg.what) {
+                case 2000:
+                    if (dialog.isShowing()) {
+                        dialog.dismiss();
+                    }
+                    // 删除成功刷新列表
+                    mDate.remove(canderPosition);
+                    xlvOrder.setAdapter(mAdapter);
+                    mAdapter.notifyDataSetChanged();
+                    Toast.makeText(getActivity(), "已取消", Toast.LENGTH_SHORT).show();
+                    break;
+                case 2001:
+                    if (dialog.isShowing()) {
+                        dialog.dismiss();
+                    }
+                    btCanderOrder.setClickable(true);
+                    Toast.makeText(getActivity(), msg.obj.toString(), Toast.LENGTH_SHORT).show();
+                    break;
+                case 1001:
+                    if (dialog.isShowing()) {
+                        dialog.dismiss();
+                    }
+                    btCanderOrder.setClickable(true);
+                    Toast.makeText(getActivity(), getString(R.string.network_error), Toast.LENGTH_SHORT).show();
+                    break;
+                case 1002:
+                    if (dialog.isShowing()) {
+                        dialog.dismiss();
+                    }
+                    btCanderOrder.setClickable(true);
+                    Toast.makeText(getActivity(), getString(R.string.net_work_error), Toast.LENGTH_SHORT).show();
+                    break;
+                default:
+                    break;
+            }
+            super.handleMessage(msg);
+        }
+    };
+
     @SuppressLint("HandlerLeak")
     Handler Hander_manualReceipt = new Handler() {
         @Override
         public void handleMessage(Message msg) {
             switch (msg.what) {
                 case 2000:
+                    if (dialog.isShowing()) {
+                        dialog.dismiss();
+                    }
                     bt.setText("已接单");
                     bt.setClickable(false);
                     //接单成功选中代发配送
@@ -1206,10 +1315,16 @@ public class Pending extends Fragment implements View.OnClickListener, XListView
                     Toast.makeText(getActivity(), msg.obj.toString(), Toast.LENGTH_SHORT).show();
                     break;
                 case 2001:
+                    if (dialog.isShowing()) {
+                        dialog.dismiss();
+                    }
                     bt.setClickable(true);
                     Toast.makeText(getActivity(), msg.obj.toString(), Toast.LENGTH_SHORT).show();
                     break;
                 case 1001:
+                    if (dialog.isShowing()) {
+                        dialog.dismiss();
+                    }
                     Toast.makeText(getActivity(), getString(R.string.network_error), Toast.LENGTH_SHORT).show();
                     break;
                 default:
@@ -1224,6 +1339,9 @@ public class Pending extends Fragment implements View.OnClickListener, XListView
         public void handleMessage(Message msg) {
             switch (msg.what) {
                 case 2000:
+                    if (dialog.isShowing()) {
+                        dialog.dismiss();
+                    }
                     bt.setText("已接单");
                     bt.setClickable(false);
 //                    //接单成功选中代发配送
@@ -1231,10 +1349,16 @@ public class Pending extends Fragment implements View.OnClickListener, XListView
                     Toast.makeText(getActivity(), msg.obj.toString(), Toast.LENGTH_SHORT).show();
                     break;
                 case 2001:
+                    if (dialog.isShowing()) {
+                        dialog.dismiss();
+                    }
                     bt.setClickable(true);
                     Toast.makeText(getActivity(), msg.obj.toString(), Toast.LENGTH_SHORT).show();
                     break;
                 case 1001:
+                    if (dialog.isShowing()) {
+                        dialog.dismiss();
+                    }
                     Toast.makeText(getActivity(), getString(R.string.network_error), Toast.LENGTH_SHORT).show();
                     break;
                 default:

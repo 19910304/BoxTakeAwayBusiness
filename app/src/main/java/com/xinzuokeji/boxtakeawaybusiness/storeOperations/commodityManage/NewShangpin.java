@@ -51,7 +51,6 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.util.Calendar;
-import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
@@ -328,7 +327,7 @@ public class NewShangpin extends BaseActivity {
                         && Valid.isNotNullOrEmpty(menuid) && Valid.isNotNullOrEmpty(et_lunch_box_price.getText().toString().trim()) && Valid.isNotNullOrEmpty(et_stock.getText().toString().trim())) {
                     if (startime < endtime) {
                         netService.addGoods(goodId, GetstoreId(), et_good_name.getText().toString().trim(), Double.parseDouble(goodPrice), startTime.getText().toString().trim(), endTime.getText().toString().trim(), Integer.parseInt(menuid), et_biaoqian1.getText().toString().trim(), et_biaoqian2.getText().toString().trim(),
-                                et_biaoqian3.getText().toString().trim(), Double.parseDouble(lunch_box_price), et_describe.getText().toString().trim(), Integer.parseInt(et_stock.getText().toString().trim()), "", addGoods);
+                                et_biaoqian3.getText().toString().trim(), Double.parseDouble(lunch_box_price), et_describe.getText().toString().trim(), Integer.parseInt(et_stock.getText().toString().trim()), guigiId, addGoods);
                     } else {
                         showTip("营业开始时间不得晚于营业结束时间", Toast.LENGTH_SHORT);
                     }
@@ -345,14 +344,27 @@ public class NewShangpin extends BaseActivity {
                 break;
             // 选择规格
             case R.id.ll_change_guige:
-                HashMap<String, String> extras = new HashMap<>();
-                extras.put("good_id", "0");
-                extras.put("list_type", "GuigeList");
-                try {
-                    gotoActivity(ChangeGuige.class.getName(), extras);
-                } catch (ClassNotFoundException e) {
-                    e.printStackTrace();
+                if (startTime.getText().toString().equals("开始")) {
+                    startTime.setText("00:00");
                 }
+                if (endTime.getText().toString().equals("结束")) {
+                    endTime.setText("23:59");
+                }
+                long startime_guige = getStringToDate(startTime.getText().toString().trim(), "HH:mm");
+                long endtime_guige = getStringToDate(endTime.getText().toString().trim(), "HH:mm");
+
+                if (Valid.isNotNullOrEmpty(url) && Valid.isNotNullOrEmpty(String.valueOf(goodId)) && Valid.isNotNullOrEmpty(et_good_name.getText().toString().trim()) && Valid.isNotNullOrEmpty(et_good_price.getText().toString().trim()) && Valid.isNotNullOrEmpty(startTime.getText().toString().trim()) && Valid.isNotNullOrEmpty(endTime.getText().toString().trim())
+                        && Valid.isNotNullOrEmpty(menuid) && Valid.isNotNullOrEmpty(et_lunch_box_price.getText().toString().trim()) && Valid.isNotNullOrEmpty(et_stock.getText().toString().trim())) {
+                    if (startime_guige < endtime_guige) {
+                        netService.addGoods(goodId, GetstoreId(), et_good_name.getText().toString().trim(), Double.parseDouble(goodPrice), startTime.getText().toString().trim(), endTime.getText().toString().trim(), Integer.parseInt(menuid), et_biaoqian1.getText().toString().trim(), et_biaoqian2.getText().toString().trim(),
+                                et_biaoqian3.getText().toString().trim(), Double.parseDouble(lunch_box_price), et_describe.getText().toString().trim(), Integer.parseInt(et_stock.getText().toString().trim()), guigiId, addGoodsGuige);
+                    } else {
+                        showTip("营业开始时间不得晚于营业结束时间", Toast.LENGTH_SHORT);
+                    }
+                } else {
+                    showTip("请填写完整的商品信息", Toast.LENGTH_SHORT);
+                }
+
                 break;
             case R.id.ll_xuanze_caidan://选择菜单
                 Intent intent_choice_menus = new Intent(this, ChoiceMenus.class);
@@ -372,7 +384,7 @@ public class NewShangpin extends BaseActivity {
                         && Valid.isNotNullOrEmpty(menuid) && Valid.isNotNullOrEmpty(et_lunch_box_price.getText().toString().trim()) && Valid.isNotNullOrEmpty(et_stock.getText().toString().trim())) {
                     if (startime_taste < endtime_taste) {
                         netService.addGoods(goodId, GetstoreId(), et_good_name.getText().toString().trim(), Double.parseDouble(goodPrice), startTime.getText().toString().trim(), endTime.getText().toString().trim(), Integer.parseInt(menuid), et_biaoqian1.getText().toString().trim(), et_biaoqian2.getText().toString().trim(),
-                                et_biaoqian3.getText().toString().trim(), Double.parseDouble(lunch_box_price), et_describe.getText().toString().trim(), Integer.parseInt(et_stock.getText().toString().trim()), "", addGoodsTaste);
+                                et_biaoqian3.getText().toString().trim(), Double.parseDouble(lunch_box_price), et_describe.getText().toString().trim(), Integer.parseInt(et_stock.getText().toString().trim()), guigiId, addGoodsTaste);
                     } else {
                         showTip("营业开始时间不得晚于营业结束时间", Toast.LENGTH_SHORT);
                     }
@@ -612,9 +624,46 @@ public class NewShangpin extends BaseActivity {
                     if (goodId != 0 && save_stype.equals("true")) {
                         Intent intent_taste = new Intent(NewShangpin.this, GuigeList.class);
                         intent_taste.putExtra("good_id", String.valueOf(goodId));
+                        // list_type区分规格和口味
                         intent_taste.putExtra("list_type", "tasteList");
                         intent_taste.putExtra("attribute_id", "0");
                         startActivityForResult(intent_taste, 2);
+                    } else {
+                        showTip("请先保存商品", Toast.LENGTH_SHORT);
+                    }
+                    break;
+                case 2001:
+                    showTip(msg.obj.toString(), Toast.LENGTH_SHORT);
+                    break;
+                case 1001:
+
+                    break;
+                default:
+                    break;
+            }
+            super.handleMessage(msg);
+        }
+    };
+    @SuppressLint("HandlerLeak")
+    Handler addGoodsGuige = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            switch (msg.what) {
+                case 2000:
+                    if (msg.obj != null) {
+//                        showTip(msg.obj.toString(), Toast.LENGTH_SHORT);
+                    }
+                    ACache aCache = ACache.get(NewShangpin.this);
+                    aCache.put("menu_position", menu_position);
+                    aCache.put("menuid", menuid);
+                    save_stype = "true";
+                    if (goodId != 0 && save_stype.equals("true")) {
+                        Intent intent = new Intent(NewShangpin.this, GuigeList.class);
+                        intent.putExtra("good_id", String.valueOf(goodId));
+                        intent.putExtra("list_type", "GuigeList");
+                        startActivityForResult(intent, 0);
+
+
                     } else {
                         showTip("请先保存商品", Toast.LENGTH_SHORT);
                     }
@@ -671,7 +720,6 @@ public class NewShangpin extends BaseActivity {
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
-//                    Log.i("img", msg.obj.toString() + "--");
                     break;
                 case 2001:
                     showTip(msg.obj.toString(), Toast.LENGTH_SHORT);

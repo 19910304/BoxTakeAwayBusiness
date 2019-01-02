@@ -22,6 +22,7 @@ import com.xinzuokeji.boxtakeawaybusiness.BaseActivity;
 import com.xinzuokeji.boxtakeawaybusiness.R;
 import com.xinzuokeji.boxtakeawaybusiness.entities.GoodsMenu;
 import com.xinzuokeji.boxtakeawaybusiness.netService.NetService;
+import com.xinzuokeji.boxtakeawaybusiness.util.ACache;
 import com.xinzuokeji.boxtakeawaybusiness.util.Valid;
 
 import java.util.ArrayList;
@@ -138,7 +139,6 @@ public class CaidanBiande extends BaseActivity {
                 case 2000:
                     showTip(msg.obj.toString(), Toast.LENGTH_SHORT);
                     Intent intent = new Intent(CaidanBiande.this, CaidanBianji.class);
-//                    intent.putExtra("mdateMenu", (Serializable) mDate);
                     if (getPackageManager().resolveActivity(intent, 0) != null) {
                         CaidanBianji.mActivity.finish();
                         // 说明系统中不存在这个activity
@@ -170,6 +170,8 @@ public class CaidanBiande extends BaseActivity {
                         CaidanBianji.mActivity.finish();
                         // 说明系统中不存在这个activity
                     }
+                    ACache aCache = ACache.get(CaidanBiande.this);
+                    aCache.remove("menu_position");
                     startActivity(intent);
                     finish();
                     break;

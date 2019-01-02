@@ -14,8 +14,6 @@ import com.xinzuokeji.boxtakeawaybusiness.R;
 import com.xinzuokeji.boxtakeawaybusiness.entities.LoginInfo;
 import com.xinzuokeji.boxtakeawaybusiness.netService.NetService;
 
-import static com.xinzuokeji.boxtakeawaybusiness.GSApplication.getInstance;
-
 public class MeAccount extends BaseActivity {
     private ImageButton header_back;
     LinearLayout ll_change_password, ll_banding_phone;
@@ -44,7 +42,6 @@ public class MeAccount extends BaseActivity {
     @Override
     public void initEvent() {
         super.initEvent();
-
         header_back.setOnClickListener(this);
         ll_banding_phone.setOnClickListener(this);
         ll_change_password.setOnClickListener(this);
@@ -98,9 +95,7 @@ public class MeAccount extends BaseActivity {
                     if (msg.obj != null) {
                         com.xinzuokeji.boxtakeawaybusiness.entities.LoginInfo loginInfo = (LoginInfo) msg.obj;
                         tv_account_name.setText(loginInfo.account_name);
-                        if (loginInfo.phone.equals(getInstance().ceshiphone)) {
-                            tv_account_name.setText("zhangxs");
-                        }
+
                         tv_band_phone.setText(loginInfo.phone);
 
                     }
